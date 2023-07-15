@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-teodoraalina-start-packi-nh2l3m93sk.us2.codeanyapp.com',
+ALLOWED_HOSTS = ['8000-teodoraalina-start-packi-76zg9v581f.us2.codeanyapp.com',
                  'start-packing-6d194f35b54b.herokuapp.com']
 
 
