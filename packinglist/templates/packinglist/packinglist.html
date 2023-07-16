@@ -11,7 +11,22 @@
 <body>
     <h1>Pack your items for the vacation</h1>
     {{ packinglists }}
+    <table>
+        {% for list in packinglists %}
+        <tr>
+            <td>{{ list.title }}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
     {{ tasks }}
+    <table>
+        {% for task in tasks %}
+        <tr>
+            <td>{{ task.title }}</td>
+            <td>{{ task.done }}</td>
+        </tr>
+        {% endfor %}
 </body>
 
 </html>

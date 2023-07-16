@@ -5,7 +5,9 @@ from .models import Task
 
 def get_packing_list(request):
     packinglists = PackingList.objects.all()
+    tasks = Task.objects.all()
     context = {
-        'packinglists': packinglists
+        'packinglists': packinglists,
+        'tasks': tasks
     }
-    return render(request, 'packinglist.html', context)
+    return render(request, 'packinglist/packinglist.html', context)
