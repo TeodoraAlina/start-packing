@@ -16,9 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include, path
-from packinglist import views
+from packinglist.views import get_packing_list, add_packing_list
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.get_packing_list, name='get_packing_list')
+    path('', get_packing_list, name='get_packing_list'),
+    path('add', add_packing_list, name='add')
 ]

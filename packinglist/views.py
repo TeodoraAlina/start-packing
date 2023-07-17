@@ -11,3 +11,7 @@ def get_packing_list(request):
         'tasks': tasks
     }
     return render(request, 'packinglist/packinglist.html', context)
+
+
+def add_packing_list(request):
+    return render(request, 'packinglist/add_packinglist.html')

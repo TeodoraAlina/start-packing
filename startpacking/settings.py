@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-teodoraalina-start-packi-76zg9v581f.us2.codeanyapp.com',
+ALLOWED_HOSTS = ['8000-teodoraalina-start-packi-0vq4wogtpi.us2.codeanyapp.com',
                  'start-packing-6d194f35b54b.herokuapp.com']
 
 
@@ -63,7 +63,7 @@ ROOT_URLCONF = 'startpacking.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': TEMPLATES_DIR,
+        'DIRS': [TEMPLATES_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
