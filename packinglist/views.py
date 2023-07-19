@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .models import PackingList
 from .models import Task
 from .forms import PackingListForm
+from .forms import TaskForm
 
 
 def get_packing_list(request):
@@ -26,3 +27,15 @@ def add_packing_list(request):
     }
     return render(request, 'packinglist/add_packinglist.html', context)
 
+
+def add_task(request):
+    if request.method == 'POST':
+        form_task = TaskForm(request.POST)
+        if form_task.is_valid():
+            form_task.save()
+            return redirect('get_packing_list')
+    form_task = TaskForm()
+    context = {
+        'form_task': form_task
+    }
+    return render(request, 'packinglist/add_task.html', context)
