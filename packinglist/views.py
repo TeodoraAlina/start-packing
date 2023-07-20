@@ -1,9 +1,7 @@
 from __future__ import print_function
-from django.shortcuts import render, redirect
-from .models import PackingList
-from .models import Task
-from .forms import PackingListForm
-from .forms import TaskForm
+from django.shortcuts import render, redirect, get_object_or_404
+from .models import PackingList, Task
+from .forms import PackingListForm, TaskForm, TaskFormSet
 
 
 def get_packing_list(request):
@@ -44,3 +42,29 @@ def add_task(request):
     }
     return render(request, 'packinglist/add_task.html', context)
 
+
+def edit_packing_list(request, packing_list_id):
+    packing_list = get_object_or_404(PackingList, id=packing_list_id)
+    tasks = Task.objects.filter(packing_list=packing_list)
+
+    if request.method == 'POST':
+        packing_list_form = PackingListForm(
+            request.POST, instance=packing_list)
+        task_formset = TaskFormSet(request.POST, instance=packing_list)
+
+        if packing_list_form.is_valid() and task_formset.is_valid():
+            packing_list_form.save()
+            task_formset.save()
+
+            return redirect('get_packing_list')
+    else:
+        packing_list_form = PackingListForm(instance=packing_list)
+        task_formset = TaskFormSet(instance=packing_list)
+
+    context = {
+        'packing_list': packing_list,
+        'tasks': tasks,
+        'packing_list_form': packing_list_form,
+        'task_formset': task_formset
+    }
+    return render(request, 'packinglist/edit_packinglist.html', context)

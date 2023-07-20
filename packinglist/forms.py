@@ -16,4 +16,4 @@ class TaskForm(forms.ModelForm):
 
 
 TaskFormSet = forms.inlineformset_factory(
-    PackingList, Task, form=TaskForm, extra=1)
+    PackingList, Task, form=TaskForm, extra=0)

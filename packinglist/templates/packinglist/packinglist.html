@@ -17,7 +17,6 @@
         <tr>
             <th>List Name</th>
             <th>Tasks</th>
-            <th></th>
         </tr>
         {% for packinglist in packinglists %}
         <tr>
@@ -25,13 +24,19 @@
             <td>
                 <ul>
                     {% for task in packinglist.task_set.all %}
-                    <li>{{ task.title }} {{ task.completed }}</li>
+                    <li>{{ task.title }} {{ task.completed }}
+                    </li>
                     {% endfor %}
                 </ul>
             </td>
             <td>
                 <a href="{% url 'add_task' %}?packing_list_id={{ packinglist.id }}">
                     Add Task
+                </a>
+            </td>
+            <td>
+                <a href="{% url 'edit_packing_list' packinglist.id %}">
+                    Edit List
                 </a>
             </td>
         </tr>
