@@ -10,9 +10,9 @@
 
 <body>
     <h1>Add a Packing list for your vacation:</h1>
-    <form method="POST" action="add">
+    <form method="POST" action="/add/">
         {% csrf_token %}
-        {{ form }}
+        {{ form.as_p }}
         <div>
             <p>
                 <button type="submit">Add Packing List</button>

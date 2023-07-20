@@ -5,30 +5,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Packing list</title>
+    <title>Packing lists and Tasks</title>
 </head>
 
 <body>
     <h1>Pack your items for the vacation</h1>
-    <a href="/add">Add a packing list</a>
+    <a href="{% url 'add_packing_list' %}">Add a packing list</a>
 
     <h2>View existing lists here:</h2>
     <table>
-        {% for list in packinglists %}
         <tr>
-            <td>{{ list.title }}</td>
+            <th>List Name</th>
+            <th>Tasks</th>
+        </tr>
+        {% for packinglist in packinglists %}
+        <tr>
+            <td>{{ packinglist.title }}</td>
+            <td>
+                <ul>
+                    {% for task in packinglist.task_set.all %}
+                    <li>{{ task.title }}</li>
+                    {% endfor %}
+                </ul>
+            </td>
         </tr>
         {% endfor %}
     </table>
-    <a href="/add_task">Add a Task</a>
-    <table>
-        {% for task in tasks %}
-        <tr>
-            <td>{{ task.title }}</td>
-            <td>{{ task.completed }}</td>
-        </tr>
-        {% endfor %}
-    </table>
+
+    <a href="{% url 'add_task' %}">Add a Task</a>
 </body>
 
 </html>
