@@ -43,3 +43,4 @@ def add_task(request):
         'form_task': form_task
     }
     return render(request, 'packinglist/add_task.html', context)
+
