@@ -75,3 +75,17 @@ def toggle_task(request, task_id):
     task.completed = not task.completed
     task.save()
     return redirect('get_packing_list')
+
+
+def delete_item(request, item_type, item_id):
+    model = None
+    if item_type == 'task':
+        model = Task
+    elif item_type == 'packinglist':
+        model = PackingList
+
+    if model:
+        item = get_object_or_404(model, id=item_id)
+        item.delete()
+
+    return redirect('get_packing_list')
