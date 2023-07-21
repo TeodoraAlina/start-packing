@@ -28,6 +28,9 @@
                 <a href="{% url 'edit_packing_list' packinglist.id %}">
                     <button>Edit List</button>
                 </a>
+                <a href="{% url 'delete_item' 'packinglist' packinglist.id %}">
+                    <button>Delete List</button>
+                </a>
             </td>
             <td>
                 <ul>
@@ -35,6 +38,9 @@
                     <li>{{ task.title }} {{ task.completed }}
                         <a href="{% url 'toggle_task' task_id=task.id %}">
                             <button>Toggle</button>
+                        </a>
+                        <a href="{% url 'delete_item' 'task' task.id %}">
+                            <button>Delete Task</button>
                         </a>
                     </li>
 
