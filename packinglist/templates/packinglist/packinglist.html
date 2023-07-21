@@ -11,51 +11,46 @@
 <body>
     <h1>Pack your items for the vacation</h1>
     <a href="{% url 'add_packing_list' %}">
-        <button>Add a packing list</button>
+        <button>Add a new packing list</button>
     </a>
 
     <h2>All Packing Lists:</h2>
-    <table>
-        <tr>
-            <th>List Name</th>
-            <th></th>
-            <th>Tasks</th>
-        </tr>
+    <ol>
         {% for packinglist in packinglists %}
-        <tr>
-            <td>{{ packinglist.title }}</td>
-            <td>
+        <li>
+            <h3>
+                {{ packinglist.title }}
                 <a href="{% url 'edit_packing_list' packinglist.id %}">
                     <button>Edit List</button>
                 </a>
                 <a href="{% url 'delete_item' 'packinglist' packinglist.id %}">
                     <button>Delete List</button>
                 </a>
-            </td>
-            <td>
-                <ul>
-                    {% for task in packinglist.task_set.all %}
-                    <li>{{ task.title }} {{ task.completed }}
-                        <a href="{% url 'toggle_task' task_id=task.id %}">
-                            <button>Toggle</button>
-                        </a>
-                        <a href="{% url 'delete_item' 'task' task.id %}">
-                            <button>Delete Task</button>
-                        </a>
-                    </li>
+            </h3>
 
-                    {% endfor %}
-                </ul>
-            </td>
-            <td>
-                <a href="{% url 'add_task' %}?packing_list_id={{ packinglist.id }}">
-                    <button>Add Task</button>
+        </li>
+        <ul>
+            {% for task in packinglist.task_set.all %}
+            <li> {% if task.completed %}
+                <strike>{{ task.title }}</strike>
+                {% else %}
+                {{ task.title }}
+                {% endif %}
+                <a href="{% url 'toggle_task' task_id=task.id %}">
+                    <button>Toggle</button>
                 </a>
-            </td>
+                <a href="{% url 'delete_item' 'task' task.id %}">
+                    <button>Delete Task</button>
+                </a>
+            </li>
 
-        </tr>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'add_task' %}?packing_list_id={{ packinglist.id }}">
+            <button>Add Task</button>
+        </a>
         {% endfor %}
-    </table>
+    </ol>
 </body>
 
 </html>
