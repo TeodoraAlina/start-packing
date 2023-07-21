@@ -9,5 +9,6 @@ urlpatterns = [
     path('add/', views.add_packing_list, name='add_packing_list'),
     path('add_task/', views.add_task, name='add_task'),
     path('edit_packing_list/<int:packing_list_id>/',
-         views.edit_packing_list, name='edit_packing_list')
+         views.edit_packing_list, name='edit_packing_list'),
+    path('toggle_task/<int:task_id>/', views.toggle_task, name='toggle_task')
 ]

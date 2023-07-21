@@ -18,15 +18,26 @@
     <table>
         <tr>
             <th>List Name</th>
+            <th></th>
             <th>Tasks</th>
         </tr>
         {% for packinglist in packinglists %}
         <tr>
             <td>{{ packinglist.title }}</td>
             <td>
+                <a href="{% url 'edit_packing_list' packinglist.id %}">
+                    <button>Edit List</button>
+                </a>
+            </td>
+            <td>
                 <ul>
                     {% for task in packinglist.task_set.all %}
-                    <li>{{ task.title }} {{ task.completed }}</li>
+                    <li>{{ task.title }} {{ task.completed }}
+                        <a href="{% url 'toggle_task' task_id=task.id %}">
+                            <button>Toggle</button>
+                        </a>
+                    </li>
+
                     {% endfor %}
                 </ul>
             </td>
@@ -35,11 +46,7 @@
                     <button>Add Task</button>
                 </a>
             </td>
-            <td>
-                <a href="{% url 'edit_packing_list' packinglist.id %}">
-                    <button>Edit List</button>
-                </a>
-            </td>
+
         </tr>
         {% endfor %}
     </table>
