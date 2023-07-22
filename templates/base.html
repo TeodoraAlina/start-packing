@@ -13,7 +13,12 @@
         <ul>
             <li><a href="{% url 'get_homepage' %}">Home</a></li>
             <li><a href="{% url 'get_packing_list' %}">Packing List App</a></li>
-            <!-- Add other navigation links here -->
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'account_logout' %}">Logout</a></li>
+            {% else %}
+            <li><a href="{% url 'account_login' %}">Login</a></li>
+            <li><a href="{% url 'account_signup' %}">Signup</a></li>
+            {% endif %}
         </ul>
     </nav>
     <main>
