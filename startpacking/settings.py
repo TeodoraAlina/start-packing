@@ -89,6 +89,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'startpacking.wsgi.application'
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://8000-teodoraalina-start-packi-ih5tuwba3x.us2.codeanyapp.com"]
+
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
