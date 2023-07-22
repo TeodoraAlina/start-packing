@@ -1,3 +1,6 @@
+{% extends 'base.html' %}
+
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,6 +12,7 @@
 </head>
 
 <body>
+
     <h1>Pack your items for the vacation</h1>
     <a href="{% url 'add_packing_list' %}">
         <button>Add a new packing list</button>
@@ -54,3 +58,4 @@
 </body>
 
 </html>
+{% endblock %}

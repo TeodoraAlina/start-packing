@@ -4,6 +4,10 @@ from .models import PackingList, Task
 from .forms import PackingListForm, TaskForm, TaskFormSet
 
 
+def get_homepage(request):
+    return render(request, 'index.html')
+
+
 def get_packing_list(request):
     packinglists = PackingList.objects.all()
     tasks = Task.objects.all()
