@@ -1,23 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Packing List Home</title>
-</head>
-
-<body>
-    <main>
-        <h1>Start Packing...<br>We are going on a VACATION!</h1>
-        <p>Click on the "Packing List App" link in the navigation
-            above to create your packing lists.</p>
-    </main>
-</body>
-
-</html>
+<main class="container-fluid text-center">
+    <div class="col">
+        <h1 class="display-3 mb-4">Start Packing...</h1>
+        <p class="lead">We are going on a VACATION!</p>
+        <p class="mb-4">Click on the "Packing List App" link in the navigation above to create your packing lists.</p>
+        <a href="{% url 'get_packing_list' %}" class="btn btn-primary btn-lg">Start your packing lists</a>
+    </div>
+</main>
 {% endblock %}
