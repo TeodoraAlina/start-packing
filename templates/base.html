@@ -18,10 +18,11 @@
 
 </head>
 
-<body>
+<body {% block body_attributes %}>
     <nav class="navbar navbar-expand-md navbar-light">
         <div class="container">
-            <a class="navbar-brand" href="{% url 'get_homepage' %}"><i class="fa-solid fa-umbrella-beach"></i> Smells like Vacay</a>
+            <a class="navbar-brand" href="{% url 'get_homepage' %}"><i class="fa-solid fa-umbrella-beach"></i> Smells
+                like Vacay</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -55,6 +56,6 @@
         {% block content %}
         {% endblock %}
     </main>
-</body>
+</body {% endblock %}>
 
 </html>
