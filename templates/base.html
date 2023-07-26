@@ -15,10 +15,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title>{% block title %}Smells Like Vacay{% endblock %}</title>
-
 </head>
 
-<body {% block body_attributes %}>
+<body>
     <nav class="navbar navbar-expand-md navbar-light">
         <div class="container">
             <a class="navbar-brand" href="{% url 'get_homepage' %}"><i class="fa-solid fa-umbrella-beach"></i> Smells
@@ -56,6 +55,6 @@
         {% block content %}
         {% endblock %}
     </main>
-</body {% endblock %}>
+</body>
 
 </html>

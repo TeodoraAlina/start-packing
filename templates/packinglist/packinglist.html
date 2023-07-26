@@ -1,37 +1,40 @@
 {% extends 'base.html' %}
 
-{% block body_class %}packinglist-body{% endblock %}
-
 {% block content %}
-<main class="container">
-    <h1 class="mb-4">Pack your items for the vacation</h1>
-    <a href="{% url 'add_packing_list' %}" class="btn btn-primary mb-3">Add a new packing list</a>
-    <h2>All Packing Lists:</h2>
-    <ol>
-        {% for packinglist in packinglists %}
-        <li>
-            <h3>
-                {{ packinglist.title }}
-                <a href="{% url 'edit_packing_list' packinglist.id %}" class="btn btn-secondary btn-sm">Edit List</a>
-                <a href="{% url 'delete_item' 'packinglist' packinglist.id %}" class="btn btn-danger btn-sm">Delete
-                    List</a>
-            </h3>
 
-        </li>
-        <ul>
-            {% for task in packinglist.task_set.all %}
-            <li> {% if task.completed %}
-                <strike>{{ task.title }}</strike>
-                {% else %}
-                {{ task.title }}
-                {% endif %}
-                <a href="{% url 'toggle_task' task_id=task.id %}" class="btn btn-info btn-sm">Toggle</a>
-                <a href="{% url 'delete_item' 'task' task.id %}" class="btn btn-danger btn-sm">Delete Task</a>
+<body style="background-image: none;">
+    <main class="container">
+        <h1 class="mb-4">Pack your items for the vacation</h1>
+        <a href="{% url 'add_packing_list' %}" class="btn btn-primary mb-3">Add a new packing list</a>
+        <h2>All Packing Lists:</h2>
+        <ol>
+            {% for packinglist in packinglists %}
+            <li>
+                <h3>
+                    {{ packinglist.title }}
+                    <a href="{% url 'edit_packing_list' packinglist.id %}" class="btn btn-secondary btn-sm">Edit
+                        List</a>
+                    <a href="{% url 'delete_item' 'packinglist' packinglist.id %}" class="btn btn-danger btn-sm">Delete
+                        List</a>
+                </h3>
+
             </li>
+            <ul>
+                {% for task in packinglist.task_set.all %}
+                <li> {% if task.completed %}
+                    <strike>{{ task.title }}</strike>
+                    {% else %}
+                    {{ task.title }}
+                    {% endif %}
+                    <a href="{% url 'toggle_task' task_id=task.id %}" class="btn btn-info btn-sm">Toggle</a>
+                    <a href="{% url 'delete_item' 'task' task.id %}" class="btn btn-danger btn-sm">Delete Task</a>
+                </li>
+                {% endfor %}
+            </ul>
+            <a href="{% url 'add_task' %}?packing_list_id={{ packinglist.id }}" class="btn btn-success btn-sm">Add
+                Task</a>
             {% endfor %}
-        </ul>
-        <a href="{% url 'add_task' %}?packing_list_id={{ packinglist.id }}" class="btn btn-success btn-sm">Add Task</a>
-        {% endfor %}
-    </ol>
-</main>
+        </ol>
+    </main>
+</body>
 {% endblock %}
