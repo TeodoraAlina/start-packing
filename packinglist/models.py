@@ -3,6 +3,8 @@ from django.contrib.auth.models import User
 
 
 class PackingList(models.Model):
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE, null=False)
     title = models.CharField(max_length=70)
     created_date = models.DateField(auto_now_add=True)
 
