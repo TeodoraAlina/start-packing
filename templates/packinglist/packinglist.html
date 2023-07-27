@@ -17,7 +17,8 @@
                         </button>
                         <a href="{% url 'edit_packing_list' packinglist.id %}" class="btn btn-secondary btn-sm">Edit
                             List</a>
-                        <a href="{% url 'delete_item' 'packinglist' packinglist.id %}"
+                        <a href="#"
+                            onclick="confirmDelete('{{ packinglist.title }}', '{{ packinglist.id }}', 'packinglist')"
                             class="btn btn-danger btn-sm">Delete List</a>
                     </h3>
                 </div>
@@ -29,7 +30,8 @@
                         {{ task.title }}
                         {% endif %}
                         <a href="{% url 'toggle_task' task_id=task.id %}" class="btn btn-info btn-sm">Toggle</a>
-                        <a href="{% url 'delete_item' 'task' task.id %}" class="btn btn-danger btn-sm">Delete Task</a>
+                        <a href="#" onclick="confirmDelete('{{ task.title }}', '{{ task.id }}', 'task')"
+                            class="btn btn-danger btn-sm">Delete Task</a>
                     </li>
                     {% endfor %}
                 </ul>
@@ -45,6 +47,17 @@
     function toggleList(button) {
         const taskList = button.parentNode.parentNode.nextElementSibling;
         taskList.classList.toggle("hidden");
+    }
+
+    function confirmDelete(itemTitle, itemId, itemType) {
+        if (confirm(`Are you sure you want to delete "${itemTitle}"?`)) {
+            // If the user confirms, redirect to the appropriate delete view
+            if (itemType === 'packinglist') {
+                window.location.href = `/delete_item/packinglist/${itemId}/`;
+            } else if (itemType === 'task') {
+                window.location.href = `/delete_item/task/${itemId}/`;
+            }
+        }
     }
 </script>
 {% endblock %}
