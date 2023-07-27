@@ -1,9 +1,14 @@
+/* Styles for index.html */
+
 html,
 body {
     height: 100%;
     margin: 0;
     padding: 0;
     background-color: #F5F5F5;
+}
+
+body {
     background-image: url("https://res.cloudinary.com/dxajyjfpw/image/upload/v1690213072/beach.jpg");
     background-size: cover;
     background-position: center center;
@@ -53,6 +58,7 @@ p {
 }
 
 .container-fluid {
+    margin-top: 60px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -61,8 +67,7 @@ p {
     padding: 20px;
 }
 
-/* ... Your previous CSS code ... */
-
+/* Styles for navigation bar*/
 .navbar {
     background-color: #FFF;
     transition: background-color 0.3s ease;
@@ -73,7 +78,7 @@ p {
     font-family: 'Poppins', sans-serif;
     color: #767676;
     text-transform: uppercase;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
 }
 
 .navbar-nav .nav-link {
@@ -88,3 +93,8 @@ p {
     border-radius: 5px;
 }
 
+/* Styles for packinglist.html */
+
+.hidden {
+    display: none;
+}
