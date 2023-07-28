@@ -4,42 +4,46 @@
 
 <body style="background-image: none;">
     <main class="container">
-        <h1 class="display-3 mb-4">Pack your items for the vacation</h1>
-        <a href="{% url 'add_packing_list' %}" class="btn btn-primary mb-3">Add a new packing list</a>
-        <h2>All Packing Lists:</h2>
+        <h1 class="display-3 mb-4">Prepare for your Dream Gateaway!</h1>
+        <a href="{% url 'add_packing_list' %}" class="btn btn-primary mb-3">Add a New Packing List</a>
+        <h2>Your Packing Lists</h2>
+        <p>To discover the essentials for your vacation packing list, simply click on the name of each list. ✨</p>
         <ol>
-            {% for packinglist in packinglists %}
-            <li class="list-item">
-                <div class="list-title">
-                    <h3>
-                        <button class="btn btn-toggle-list" onclick="toggleList(this)">
-                            {{ packinglist.title }}
-                        </button>
-                        <a href="{% url 'edit_packing_list' packinglist.id %}" class="btn btn-secondary btn-sm">Edit
-                            List</a>
-                        <a href="#"
-                            onclick="confirmDelete('{{ packinglist.title }}', '{{ packinglist.id }}', 'packinglist')"
-                            class="btn btn-danger btn-sm">Delete List</a>
-                    </h3>
-                </div>
-                <ul class="task-list">
-                    {% for task in packinglist.tasks.all %}
-                    <li class="task-item"> {% if task.completed %}
-                        <strike>{{ task.title }}</strike>
-                        {% else %}
-                        {{ task.title }}
-                        {% endif %}
-                        <a href="{% url 'toggle_task' task_id=task.id %}" class="btn btn-info btn-sm">Toggle</a>
-                        <a href="#" onclick="confirmDelete('{{ task.title }}', '{{ task.id }}', 'task')"
-                            class="btn btn-danger btn-sm">Delete Task</a>
-                    </li>
-                    {% endfor %}
-                </ul>
-                <a href="{% url 'add_task' %}?packing_list_id={{ packinglist.id }}" class="btn btn-success btn-sm">Add
-                    Task</a>
-            </li>
-            {% endfor %}
+            <div class="list-container">
+                {% for packinglist in packinglists %}
+                <li class="list-item">
+                    <div class="list-title">
+                        <h3>
+                            <a href="#" class="list-toggle" onclick="toggleList(this)">
+                                {{ packinglist.title }}
+                            </a>
+                            <a href="{% url 'edit_packing_list' packinglist.id %}" class="btn btn-secondary btn-sm">Edit
+                                List</a>
+                            <a href="#"
+                                onclick="confirmDelete('{{ packinglist.title }}', '{{ packinglist.id }}', 'packinglist')"
+                                class="btn btn-danger btn-sm">Delete List</a>
+                            <a href="{% url 'add_task' %}?packing_list_id={{ packinglist.id }}"
+                                class="btn btn-success btn-sm">Add
+                                Task</a>
+                        </h3>
+                    </div>
+                    <ul class="task-list">
+                        {% for task in packinglist.tasks.all %}
+                        <li class="task-item"> {% if task.completed %}
+                            <strike>{{ task.title }}</strike>
+                            {% else %}
+                            {{ task.title }}
+                            {% endif %}
+                            <a href="{% url 'toggle_task' task_id=task.id %}" class="btn btn-info btn-sm">Toggle</a>
+                            <a href="#" onclick="confirmDelete('{{ task.title }}', '{{ task.id }}', 'task')"
+                                class="btn btn-danger btn-sm">Delete Task</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                {% endfor %}
         </ol>
+        </div>
     </main>
 </body>
 {% endblock %}
