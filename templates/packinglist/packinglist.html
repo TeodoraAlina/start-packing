@@ -23,7 +23,7 @@
                     </h3>
                 </div>
                 <ul class="task-list">
-                    {% for task in packinglist.task_set.all %}
+                    {% for task in packinglist.tasks.all %}
                     <li class="task-item"> {% if task.completed %}
                         <strike>{{ task.title }}</strike>
                         {% else %}
