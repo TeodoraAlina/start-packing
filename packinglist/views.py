@@ -97,7 +97,7 @@ def delete_item(request, item_type, item_id):
         model = PackingList
 
     if model:
-        item = get_object_or_404(model, id=item_id, user=request.user)
+        item = get_object_or_404(model, id=item_id)
         item.delete()
 
     return redirect('get_packing_list')
