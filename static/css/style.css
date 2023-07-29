@@ -67,7 +67,8 @@ p {
     padding: 20px;
 }
 
-/* Styles for navigation bar*/
+/* Styles for navigation bar */
+
 .navbar {
     background-color: #FFF;
     transition: background-color 0.3s ease;
@@ -104,11 +105,7 @@ main.container {
     margin-top: 30px;
     padding: 20px;
     text-align: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
+    position: static;
 }
 
 main.container h1 {
@@ -126,7 +123,7 @@ main.container h2 {
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     text-transform: uppercase;
-    color: #88bdc3;
+    color: #20a8b7;
     letter-spacing: 0.1rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
@@ -137,13 +134,103 @@ main.container p {
     padding: 10px;
 }
 
-@media (max-width: 768px) {
-    main.container {
-        position: static;
-        transform: none;
-    }
+.list-container {
+    background-color: rgba(255, 255, 255, 0);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-    ol {
-        padding-left: 0;
-    }
+table {
+    letter-spacing: 0.1rem;
+}
+
+.list-title h3 a.list-toggle {
+    margin-right: 10px;
+    color: #cd8253;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.2rem;
+    font-weight: 600;
+    font-size: 1.6rem;
+    white-space: nowrap;
+}
+
+.list-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.list-title h3 {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.list-buttons .btn {
+    margin-left: 5px;
+    margin-bottom: 2px;
+}
+
+.list-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.btn.btn-primary.mb-3 {
+    font-size: 1rem;
+    background-color: #7ebdaf;
+    margin-bottom: 2rem;
+}
+
+.btn.btn-secondary.btn-sm {
+    font-size: 0.7rem;
+    padding: 10px;
+    margin-bottom: 2px;
+}
+
+.btn.btn-success.btn-sm {
+    font-size: 0.7rem;
+    padding: 10px;
+    background-color: #3f9481;
+}
+
+.btn.btn-danger.btn-sm {
+    font-size: 0.7rem;
+    padding: 10px;
+    background-color: #d64a58;
+}
+
+.btn.btn-info.btn-sm {
+    font-size: 0.7rem;
+    padding: 10px;
+    margin-bottom: 2px;
+}
+
+.task-list {
+    margin-bottom: 20px;
+}
+
+.task-item {
+    color: #20a8b7;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.1rem;
+}
+
+.task-item span {
+    flex: 1;
 }
