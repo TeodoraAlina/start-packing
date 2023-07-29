@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<body
+    style="background-image:url(https://res.cloudinary.com/dxajyjfpw/image/upload/v1690633091/sea-waves-light.jpg); height:auto; background-color: none;">
+    <main class="container">
+        <h1 class="display-3 mb-4">Prepare for your Dream Gateaway!</h1>
+        <a href="{% url 'add_packing_list' %}" class="btn btn-primary mb-3">Add a New Packing List</a>
+        <h2>Your Packing Lists</h2>
+        <p>To discover the essentials for your vacation packing list, simply click on the name of each list. ✨</p>
+
+        {% for packinglist in packinglists %}
+        <div class="list-container">
+            <table>
+                <tr>
+                    <td class="list-title" colspan="4">
+                        <h3>
+                            <a href="#" class="list-toggle" onclick="toggleList(this)">
+                                {{ packinglist.title }}
+                            </a>
+                        </h3>
+                        <div class="list-buttons">
+                            <a href="{% url 'edit_packing_list' packinglist.id %}" class="btn btn-secondary btn-sm">Edit
+                                List</a>
+                            <a href="#"
+                                onclick="confirmDelete('{{ packinglist.title }}', '{{ packinglist.id }}', 'packinglist')"
+                                class="btn btn-danger btn-sm">Delete List</a>
+                            <a href="{% url 'add_task' %}?packing_list_id={{ packinglist.id }}"
+                                class="btn btn-success btn-sm">Add Task</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="task-list hidden">
+                    <td colspan="4">
+                        {% for task in packinglist.tasks.all %}
+                        <div class="task-item"> {% if task.completed %}
+                            <strike>{{ task.title }}</strike>
+                            {% else %}
+                            {{ task.title }}
+                            {% endif %}
+                            <div class="task-buttons">
+                                <a href="{% url 'toggle_task' task_id=task.id %}" class="btn btn-info btn-sm">Toggle</a>
+                                <a href="#" onclick="confirmDelete('{{ task.title }}', '{{ task.id }}', 'task')"
+                                    class="btn btn-danger btn-sm">Delete Task</a>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </td>
+                </tr>
+            </table>
+        </div>
+        {% endfor %}
+    </main>
+</body>
+
+
+{% endblock %}

@@ -246,13 +246,6 @@ table {
     flex: 1;
 }
 
-@media (max-width: 768px) {
-
-    .list-title h3 {
-        flex-direction: column;
-    }
-}
-
 main.container.form {
     position: absolute;
     top: 50%;

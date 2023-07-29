@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main class="container-fluid text-center">
+    <div class="text-container">
+        <h1 class="display-3 mb-4">Start Packing...</h1>
+        <p class="lead">We are going on a ✨VACATION✨</p>
+        <p class="mb-4">Welcome to the Packing List App that saves you time and helps you stay a little bit more
+            organized!🌴✈️</p>
+        <a href="{% url 'get_packing_list' %}" class="btn btn-primary btn-lg">Start your packing lists</a>
+    </div>
+</main>
+{% endblock %}
