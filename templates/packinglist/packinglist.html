@@ -23,11 +23,11 @@
                         <div class="list-buttons">
                             <a href="{% url 'edit_packing_list' packinglist.id %}" class="btn btn-secondary btn-sm">Edit
                                 List</a>
+                            <a href="{% url 'add_task' %}?packing_list_id={{ packinglist.id }}"
+                                class="btn btn-success btn-sm">Add Task</a>
                             <a href="#"
                                 onclick="confirmDelete('{{ packinglist.title }}', '{{ packinglist.id }}', 'packinglist')"
                                 class="btn btn-danger btn-sm">Delete List</a>
-                            <a href="{% url 'add_task' %}?packing_list_id={{ packinglist.id }}"
-                                class="btn btn-success btn-sm">Add Task</a>
                         </div>
                     </td>
                 </tr>

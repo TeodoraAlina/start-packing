@@ -168,6 +168,10 @@ table {
     white-space: nowrap;
 }
 
+.list-title h3 a.list-toggle:hover {
+    color: #bb581a;
+}
+
 .list-title {
     display: flex;
     justify-content: center;
@@ -201,10 +205,20 @@ table {
     margin-bottom: 2rem;
 }
 
+.btn.btn-primary.mb-3:hover {
+    background-color: #4dbba5;
+}
+
+
 .btn.btn-secondary.btn-sm {
     font-size: 0.7rem;
     padding: 10px;
     margin-bottom: 2px;
+    background-color: #3f9481;
+}
+
+.btn.btn-secondary.btn-sm:hover {
+    background-color: #1a7864;
 }
 
 .btn.btn-success.btn-sm {
@@ -213,15 +227,28 @@ table {
     background-color: #3f9481;
 }
 
+.btn.btn-success.btn-sm:hover {
+    background-color: #1a7864;
+}
+
 .btn.btn-danger.btn-sm {
     font-size: 0.7rem;
     padding: 10px;
     background-color: #d64a58;
 }
 
+.btn.btn-danger.btn-sm:hover {
+    background-color: #d32335;
+}
+
 .btn.btn-info.btn-sm {
     font-size: 0.7rem;
     padding: 10px;
+    background-color: #3f9481;
+}
+
+.btn.btn-info.btn-sm:hover {
+    background-color: #1a7864;
 }
 
 .task-list {
@@ -252,7 +279,8 @@ main.container.form {
     text-align: center;
 }
 
-label, input {
+label,
+input {
     font-family: 'Roboto', sans-serif;
     letter-spacing: 0.1rem;
     color: #4c4c4c;
