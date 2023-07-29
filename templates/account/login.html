@@ -6,15 +6,15 @@
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
 {% block content %}
-
-<div class="container">
+<html lang="en" style="height:fit-content">
+<main class="container">
     <div class="row">
         <div class="col-md-8 mt-3 offset-md-2">
             <h3>{% trans "Sign In" %}</h3>
 
             <p>{% blocktrans %}Welcome back to the Packing List App. To create your private Packing Lists for your
                 vacation, please log in. If
-                you have not created an account yet, then <a class="link" href="{{ signup_url }}">sign up</a>
+                you have not created an account yet, then <a class="link color" href="{{ signup_url }}">sign up</a>
                 first.{% endblocktrans %}</p>
         </div>
     </div>
@@ -30,5 +30,7 @@
             </form>
         </div>
     </div>
-</div>
+</main>
+
+</html>
 {% endblock %}
