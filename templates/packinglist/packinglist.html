@@ -8,42 +8,49 @@
         <a href="{% url 'add_packing_list' %}" class="btn btn-primary mb-3">Add a New Packing List</a>
         <h2>Your Packing Lists</h2>
         <p>To discover the essentials for your vacation packing list, simply click on the name of each list. ✨</p>
-        <ol>
-            <div class="list-container">
-                {% for packinglist in packinglists %}
-                <li class="list-item">
-                    <div class="list-title">
+
+        {% for packinglist in packinglists %}
+        <div class="list-container">
+            <table>
+                <tr>
+                    <td class="list-title" colspan="4">
                         <h3>
                             <a href="#" class="list-toggle" onclick="toggleList(this)">
                                 {{ packinglist.title }}
                             </a>
+                        </h3>
+                        <div class="list-buttons">
                             <a href="{% url 'edit_packing_list' packinglist.id %}" class="btn btn-secondary btn-sm">Edit
                                 List</a>
                             <a href="#"
                                 onclick="confirmDelete('{{ packinglist.title }}', '{{ packinglist.id }}', 'packinglist')"
                                 class="btn btn-danger btn-sm">Delete List</a>
                             <a href="{% url 'add_task' %}?packing_list_id={{ packinglist.id }}"
-                                class="btn btn-success btn-sm">Add
-                                Task</a>
-                        </h3>
-                    </div>
-                    <ul class="task-list">
+                                class="btn btn-success btn-sm">Add Task</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="task-list hidden">
+                    <td colspan="4">
                         {% for task in packinglist.tasks.all %}
-                        <li class="task-item"> {% if task.completed %}
+                        <div class="task-item"> {% if task.completed %}
                             <strike>{{ task.title }}</strike>
                             {% else %}
                             {{ task.title }}
                             {% endif %}
-                            <a href="{% url 'toggle_task' task_id=task.id %}" class="btn btn-info btn-sm">Toggle</a>
-                            <a href="#" onclick="confirmDelete('{{ task.title }}', '{{ task.id }}', 'task')"
-                                class="btn btn-danger btn-sm">Delete Task</a>
-                        </li>
+                            <div class="task-buttons">
+                                <a href="{% url 'toggle_task' task_id=task.id %}" class="btn btn-info btn-sm">Toggle</a>
+                                <a href="#" onclick="confirmDelete('{{ task.title }}', '{{ task.id }}', 'task')"
+                                    class="btn btn-danger btn-sm">Delete Task</a>
+                            </div>
+                        </div>
                         {% endfor %}
-                    </ul>
-                </li>
-                {% endfor %}
-        </ol>
+                    </td>
+                </tr>
+            </table>
         </div>
+        {% endfor %}
     </main>
 </body>
+
 {% endblock %}

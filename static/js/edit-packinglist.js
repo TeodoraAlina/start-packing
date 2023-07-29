@@ -1,7 +1,6 @@
-
 function toggleList(button) {
-    const taskList = button.parentNode.parentNode.nextElementSibling;
-    taskList.classList.toggle("hidden");
+    const taskListRow = button.closest('tr').nextElementSibling;
+    taskListRow.classList.toggle('hidden');
 }
 
 function confirmDelete(itemTitle, itemId, itemType) {
