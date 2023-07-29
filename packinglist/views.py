@@ -45,6 +45,9 @@ def add_task(request):
             return redirect('get_packing_list')
     else:
         packing_list_id = request.GET.get('packing_list_id')
+        if packing_list_id is None:
+            return redirect('get_packing_list')
+
         form_task = TaskForm(initial={'packing_list': packing_list_id})
     context = {
         'form_task': form_task
