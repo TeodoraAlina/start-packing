@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<html lang="en" style="height:fit-content">
 
-<body
-    style="background-image:url(https://res.cloudinary.com/dxajyjfpw/image/upload/v1690633091/sea-waves-light.jpg); height:auto; background-color: none;">
+<body style="background-image:url(https://res.cloudinary.com/dxajyjfpw/image/upload/v1690633091/sea-waves-light.jpg);">
     <main class="container">
         <h1 class="display-3 mb-4">Prepare for your Dream Gateaway!</h1>
         <a href="{% url 'add_packing_list' %}" class="btn btn-primary mb-3">Add a New Packing List</a>
@@ -54,5 +54,6 @@
     </main>
 </body>
 
+</html>
 
 {% endblock %}
