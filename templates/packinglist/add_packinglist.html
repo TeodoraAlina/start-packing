@@ -1,24 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Packing list</title>
-</head>
+{% block content %}
 
-<body>
-    <h1>Add a Packing list for your vacation:</h1>
-    <form method="POST" action="/add/">
+<main class="container form">
+    <h1 class="display-4">Add a Packing List for Your Vacation:</h1>
+    <form method="POST" action="/add/" class="mt-4">
         {% csrf_token %}
         {{ form.as_p }}
-        <div>
-            <p>
-                <button type="submit">Add Packing List</button>
-            </p>
+        <div class="mt-3">
+            <button type="submit" class="btn btn-primary">Add Packing List</button>
         </div>
     </form>
-</body>
+</main>
 
-</html>
+{% endblock %}
