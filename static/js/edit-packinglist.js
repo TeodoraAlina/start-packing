@@ -4,12 +4,21 @@ function toggleList(button) {
 }
 
 function confirmDelete(itemTitle, itemId, itemType) {
-    if (confirm(`Are you sure you want to delete "${itemTitle}"?`)) {
-        // If the user confirms, redirect to the appropriate delete view
-        if (itemType === 'packinglist') {
-            window.location.href = `/delete_item/packinglist/${itemId}/`;
-        } else if (itemType === 'task') {
-            window.location.href = `/delete_item/task/${itemId}/`;
+    Swal.fire({
+        title: `Are you sure you want to delete "${itemTitle}"?`,
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d64a58',
+        cancelButtonColor: '#3f9481',
+        confirmButtonText: 'Delete',
+        cancelButtonText: 'Cancel'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            if (itemType === 'packinglist') {
+                window.location.href = `/delete_item/packinglist/${itemId}/`;
+            } else if (itemType === 'task') {
+                window.location.href = `/delete_item/task/${itemId}/`;
+            }
         }
-    }
+    });
 }
