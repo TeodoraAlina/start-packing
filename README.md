@@ -1,6 +1,6 @@
 # Smells Like Vacay - Your Ultimate Vacation Packing List
 
-<img width="350" alt="Home Page" src="images-for-readme/homepage-image.png"><img width="350" alt="Packing List App" src="images-for-readme/packinglist-app-image.png">
+<img width="600" alt="Home Page" src="images-for-readme/homepage-image.png">
 
 ## Project Overview
 
