@@ -1,63 +1,126 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<!-- This template extends the 'base.html' template and defines a new content block -->
+
 <html lang="en" style="height:fit-content">
 
 <body style="background-image:url(https://res.cloudinary.com/dxajyjfpw/image/upload/v1690633091/sea-waves-light.jpg);">
+    <!-- The body element contains the main content of the page, and a background image is set using CSS -->
+
     <main class="container">
-        <h1 class="display-3 mb-4">Prepare for your Dream Gateaway!</h1>
+        <!-- The main content container with a Bootstrap 'container' class -->
+
+        <h1 class="display-3 mb-4">Prepare for your Dream Getaway!</h1>
+        <!-- Main heading with a Bootstrap 'display-3' class and a margin bottom of 4 -->
+
         <a href="{% url 'add_packing_list' %}" class="btn btn-primary mb-3">Add a New Packing List</a>
+        <!-- Button to add a new packing list, styled using Bootstrap button classes, and a margin bottom of 3 -->
+
         <h2>Your Packing Lists</h2>
+        <!-- Sub-heading for the user's packing lists -->
+
         <p>To discover the essentials for your vacation packing list, simply click on the name of each list. ✨</p>
+        <!-- Paragraph with instructions for users to explore packing lists -->
 
         {% for packinglist in packinglists %}
+        <!-- Loop through each packing list -->
+
         <div class="list-container">
+            <!-- Container for each packing list -->
+
             <table>
+                <!-- Table to organize the packing list details -->
+
                 <tr>
+                    <!-- Table row for the packing list header -->
                     <td class="list-date">{{ packinglist.created_date }}</td>
+                    <!-- Table cell to display the created date of the packing list -->
+
                     <td class="list-title" colspan="4">
+                        <!-- Table cell for the packing list title with a colspan of 4 -->
                         <h3>
+                            <!-- Heading level 3 for the packing list title -->
                             <a href="#" class="list-toggle" onclick="toggleList(this)">
+                                <!-- Link to toggle the visibility of the task list, with a JavaScript onclick event -->
                                 {{ packinglist.title }}
+                                <!-- Display the title of the packing list -->
                             </a>
                         </h3>
                         <div class="list-buttons">
-                            <a href="{% url 'edit_packing_list' packinglist.id %}" class="btn btn-secondary btn-sm">Edit
-                                List</a>
+                            <!-- Div for the buttons related to the packing list -->
+                            <a href="{% url 'edit_packing_list' packinglist.id %}"
+                                class="btn btn-secondary btn-sm">Edit List</a>
+                            <!-- Button to edit the packing list, styled with Bootstrap classes -->
                             <a href="{% url 'add_task' %}?packing_list_id={{ packinglist.id }}"
                                 class="btn btn-success btn-sm">Add Task</a>
+                            <!-- Button to add a new task to the packing list, styled with Bootstrap classes -->
                             <a href="#"
                                 onclick="confirmDelete('{{ packinglist.title }}', '{{ packinglist.id }}', 'packinglist')"
                                 class="btn btn-danger btn-sm">Delete List</a>
+                            <!-- Button to delete the packing list, styled with Bootstrap classes and JavaScript onclick event -->
                         </div>
                     </td>
                 </tr>
                 <tr class="task-list hidden">
+                    <!-- Table row for the task list (initially hidden) -->
                     <td colspan="4">
+                        <!-- Table cell to span across four columns -->
+
                         {% for task in packinglist.tasks.all %}
+                        <!-- Loop through each task in the packing list -->
+
                         <div class="task-item">
-                            <span class="task-date">{{ task.created_task_date }}</span> 
-                            <span class="task-title">{% if task.completed %}
-                            <strike>{{ task.title }}</strike>
-                            {% else %}
-                            {{ task.title }}
-                            {% endif %}
+                            <!-- Container for each task item -->
+                            <span class="task-date">{{ task.created_task_date }}</span>
+                            <!-- Span to display the created date of the task -->
+
+                            <span class="task-title">
+                                {% if task.completed %}
+                                <!-- Conditional to check if the task is completed -->
+                                <strike>{{ task.title }}</strike>
+                                <!-- If completed, display the task title with a strike-through -->
+                                {% else %}
+                                {{ task.title }}
+                                <!-- If not completed, display the task title -->
+                                {% endif %}
                             </span>
+                            <!-- Span to display the task title -->
+
                             <div class="task-buttons">
+                                <!-- Div for the buttons related to each task -->
                                 <a href="{% url 'toggle_task' task_id=task.id %}" class="btn btn-info btn-sm">Toggle</a>
-                                <a href="#" onclick="confirmDelete('{{ task.title }}', '{{ task.id }}', 'task')"
+                                <!-- Button to toggle the task completion status, styled with Bootstrap classes -->
+                                <a href="#"
+                                    onclick="confirmDelete('{{ task.title }}', '{{ task.id }}', 'task')"
                                     class="btn btn-danger btn-sm">Delete Task</a>
+                                <!-- Button to delete the task, styled with Bootstrap classes and JavaScript onclick event -->
                             </div>
                         </div>
+                        <!-- End of task item container -->
+
                         {% endfor %}
+                        <!-- End of loop for tasks -->
+
                     </td>
                 </tr>
             </table>
+            <!-- End of table for packing list details -->
+
         </div>
+        <!-- End of packing list container -->
+
         {% endfor %}
+        <!-- End of loop for packing lists -->
+
     </main>
+    <!-- End of main content container -->
+
 </body>
+<!-- End of body -->
 
 </html>
+<!-- End of HTML document -->
 
 {% endblock %}
+<!-- End of content block -->
