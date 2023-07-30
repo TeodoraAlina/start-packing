@@ -104,9 +104,7 @@ def edit_packing_list(request, packing_list_id):
         'packing_list': packing_list,
         'tasks': tasks,
         'packing_list_form': packing_list_form,
-        'task_formset': task_formset,
-        'created_date': created_date,  # Ensure created_date and created_task_date are provided in the context
-        'created_task_date': created_task_date
+        'task_formset': task_formset
     }
     return render(request, 'packinglist/edit_packinglist.html', context)
 
