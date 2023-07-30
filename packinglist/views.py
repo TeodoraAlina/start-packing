@@ -138,3 +138,19 @@ def delete_item(request, item_type, item_id):
         item = get_object_or_404(model, id=item_id)
         item.delete()
     return redirect('get_packing_list')
+
+
+def custom_404(request, exception):
+    return render(request, 'errors/404.html', status=404)
+
+
+def custom_500(request):
+    return render(request, 'errors/500.html', status=500)
+
+
+def custom_403(request, exception):
+    return render(request, 'errors/403.html', status=403)
+
+
+def custom_405(request, exception):
+    return render(request, 'errors/405.html', status=405)
