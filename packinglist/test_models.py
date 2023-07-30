@@ -7,7 +7,8 @@ from django.utils import timezone
 class PackingListModelTestCase(TestCase):
     def setUp(self):
         # Create a user for testing
-        self.user = User.objects.create_user(username='testuser', password='testpassword')
+        self.user = User.objects.create_user(
+            username='testuser', password='testpassword')
 
         # Create a packing list object
         self.packing_list = PackingList.objects.create(
@@ -27,7 +28,8 @@ class PackingListModelTestCase(TestCase):
 class TaskModelTestCase(TestCase):
     def setUp(self):
         # Create a user for testing
-        self.user = User.objects.create_user(username='testuser', password='testpassword')
+        self.user = User.objects.create_user(
+            username='testuser', password='testpassword')
 
         # Create a packing list object
         self.packing_list = PackingList.objects.create(
