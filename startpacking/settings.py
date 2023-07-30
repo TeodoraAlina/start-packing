@@ -33,7 +33,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = False
 
 ALLOWED_HOSTS = ['8000-teodoraalina-start-packi-ih5tuwba3x.us2.codeanyapp.com',
-                 'start-packing-6d194f35b54b.herokuapp.com/']
+                 'start-packing-6d194f35b54b.herokuapp.com']
 
 
 # Application definition
