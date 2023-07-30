@@ -13,9 +13,18 @@ def get_homepage(request):
 def get_packing_list(request):
     packinglists = PackingList.objects.filter(user=request.user)
     tasks = Task.objects.filter(packing_list__user=request.user)
+
+    for packinglist in packinglists:
+        packinglist.created_date = packinglist.created_date.strftime('%b %d, %Y')
+        packinglist.save()
+
+    for task in tasks:
+        task.created_task_date = task.created_task_date.strftime('%b %d, %Y')
+        task.save()
+
     context = {
         'packinglists': packinglists,
-        'tasks': tasks
+        'tasks': tasks,
     }
     return render(request, 'packinglist/packinglist.html', context)
 
@@ -79,7 +88,10 @@ def edit_packing_list(request, packing_list_id):
         'packing_list': packing_list,
         'tasks': tasks,
         'packing_list_form': packing_list_form,
-        'task_formset': task_formset
+        'task_formset': task_formset,
+        'created_date': created_date,
+        'created_task_date': created_task_date
+        
     }
     return render(request, 'packinglist/edit_packinglist.html', context)
 
