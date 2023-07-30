@@ -32,6 +32,13 @@
     - [Login/Logout](#loginlogout)
     - [Error 404/403/500/405](#error-404403500405)
     - [Features for Future Development](#features-for-future-development)
+  - [Testing](#testing)
+  - [Validation Testing](#validation-testing)
+    - [HTML](#html)
+    - [CSS](#css)
+    - [JavaScript](#javascript)
+    - [Python](#python)
+    - [Automated Testing](#automated-testing)
 
 ## UX
 
@@ -175,3 +182,102 @@ For future improvements, I plan to implement the following features:
 3. **Checkbox for Tasks**: Instead of using a toggle button, I will introduce checkboxes for tasks. This change will provide users with a more intuitive and visually appealing way to mark tasks as completed or incomplete.
 
 By incorporating these features, I aim to enhance the overall usability and convenience of the Smells Like Vacay packing list application, making it an even more valuable tool for travelers to stay organized and well-prepared for their vacations.
+
+## Testing
+
+## Validation Testing
+
+### HTML
+
+[W3C](https://validator.w3.org/) was used to validate the HTML on all pages of the site. It was also used to validate the CSS. As the site is created with Django and utilises Django templating language within the HTML, I have checked the HTML by inspecting the page source and then running this through the validator. You can click each page to see the corresponding screenshot evidence.
+
+| Page                                                            | Result |
+| :-------------------------------------------------------------- | :----- |
+| [Home Page](images-for-readme/w3c-homepage.png)                 | Pass   |
+| [Packing List App](images-for-readme/w3c-packinglist-app.png)   | Pass   |
+| [Add Packing List](images-for-readme/w3c-add-list.png)          | Pass   |
+| [Add Task](images-for-readme/w3c-add-task.png)                  | Pass   |
+| [Edit Packing List](images-for-readme/w3c-edit-packinglist.png) | Pass   |
+| [Login](images-for-readme/w3c-login.png)                        | Pass   |
+| [Logout](images-for-readme/w3c-logout.png)                      | Pass   |
+| [Sign up](images-for-readme/w3c-signup.png)                     | Pass   |
+| [Error 404](images-for-readme/w3c-error404.png)                 | Pass   |
+
+### CSS
+
+[W3C](https://jigsaw.w3.org/css-validator/#validate_by_input) was used to validate the CSS.
+
+| File                                                  | Result |
+| :---------------------------------------------------- | :----- |
+| [static/css/style.css](images-for-readme/w3c-css.png) | Pass   |
+
+### JavaScript
+
+[JS Hint](https://jshint.com/) was used to validate the JavaScript.
+
+| File                                                        | Result |
+| :---------------------------------------------------------- | :----- |
+| [static/js/script.js](images-for-readme/jshint-test-js.png) | Pass   |
+
+### Python
+
+[Code Institute Python Linter](https://pep8ci.herokuapp.com/) was used to validate the python code.
+
+| File                                                          | Result |
+| :------------------------------------------------------------ | :----- |
+| **Start-Packing**                                             |
+| [stearpacking/urls.py](images-for-readme/pep8-urls.py.png)    | Pass   |
+| **Packing List App**                                          |
+| [packinglist/views.py](images-for-readme/pep8-views.py.png)   | Pass   |
+| [packinglist/models.py](images-for-readme/pep8-models.py.png) | Pass   |
+| [packinglist/forms.py](images-for-readme/pep8-forms.py.png)   | Pass   |
+| [packinglist/admin.py](images-for-readme/pep8-admin.py.png)   | Pass   |
+
+### Automated Testing
+
+- [Django testing tools](https://docs.djangoproject.com/en/3.2/topics/testing/tools/) and Django TestCase was used to create automatic tests for Python files. A total of 25 tests were written for the following files:
+
+  - [forms.py](https://github.com/TeodoraAlina/start-packing/blob/main/packinglist/forms.py) test file: [test_forms.py](https://github.com/TeodoraAlina/start-packing/blob/main/packinglist/test_forms.py)
+  - [models.py](https://github.com/TeodoraAlina/start-packing/blob/main/packinglist/models.py) test file: [test_models.py](https://github.com/TeodoraAlina/start-packing/blob/main/packinglist/test_models.py)
+  - [views.py](https://github.com/TeodoraAlina/start-packing/blob/main/packinglist/views.py) test file: [test_views.py](https://github.com/TeodoraAlina/start-packing/blob/main/packinglist/test_views.py)
+
+- The Django's test reporting tool '[Coverage](https://coverage.readthedocs.io/en/7.2.7/)' was installed to show the percentage of Python code that's been covered by tests:
+  ![Coverage report](images-for-readme/coverage-report.png)
+
+
+## Lighthouse
+
+#### Desktop Results
+
+[Home Page](images-for-readme/lighthouse-homepage-desktop.png)
+[Packing List App](images-for-readme/lighthouse-packinglist-app-desktop.png)
+
+- Desktop performed well on all major pages of the site with minimal improvements needed.
+
+#### Mobile Results
+
+[Home Page](images-for-readme/lighthouse-homepage-mobile.png)
+[Packing List App](images-for-readme/lighthouse-packinglist-app-mobile.png)
+
+## Manual Testing
+
+## User Stories and Test Results
+
+| User Story                                                                                                      | Test                                                      | Result |
+|---------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------|--------|
+| 1. As a user, I can mark a task as completed so that I can keep track of my progress while packing for my vacation.   | Create a task and mark it as completed.                   | Pass   |
+| 2. As a user, I can edit a task in my packing list to update the details or make corrections.                  | Create a task, edit its details, and save the changes.    | Pass   |
+| 3. As a user, I can delete a task from my packing list if I decide not to include it in my vacation planning.   | Create a task, then delete it from the list.              | Pass   |
+| 4. As a user, I can create multiple packing lists for different types of vacations or destinations to stay organized. | Create multiple packing lists with different titles.     | Pass   |
+| 5. As a user, I can add a new task to my packing list so that I remember to pack all the essential items for my trip. | Add a new task to the packing list.                      | Pass   |
+| 6. As a user, I can toggle the completion status of a task to easily visualize which items I’ve already packed. | Create a task and toggle its completion status.           | Pass   |
+| 7. As a user, I can view the created date of each packing list to keep track of when I planned for my vacations. | Create a packing list and check its created date.         | Pass   |
+| 8. As a user, I can view the created date of each task to see when I added it to my packing list.             | Create a task and check its created date.                 | Pass   |
+| 9. As a user, I can edit the title of my packing list to give it a specific name related to my vacation plans. | Create a packing list, edit its title, and save changes.  | Pass   |
+| 10. As a user, I can view all my packing lists and tasks on a single page for a comprehensive overview of my vacation preparations. | Access the packing list page and verify all lists and tasks. | Pass   |
+| 11. As a user, I can log in to my account to access my private packing lists and tasks securely.             | Log in with valid credentials and access private lists.   | Pass   |
+| 12. As a user, I can sign up for a new account to start using the “Smells Like Vacay” packing list application. | Sign up with a new account and access the app's features. | Pass   |
+| 13. As a user, I can log out of my account to ensure my packing lists are private and secure.               | Log out from the account and verify successful logout.    | Pass   |
+| 14. As an admin, I can access a dashboard to manage all users’ packing lists and tasks for administrative purposes. | Access the admin dashboard and verify access to all data. | Pass   |
+| 15. As an admin, I can view and edit any packing list or task in the system for administrative oversight. | Access the admin dashboard, view and edit data for users. | Pass   |
+| 16. As an admin, I can delete any packing list or task if necessary, ensuring data accuracy and relevance. | Access the admin dashboard, delete data for users.        | Pass   |
