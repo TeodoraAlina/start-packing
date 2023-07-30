@@ -3,6 +3,8 @@ from django.contrib.auth.models import User
 from django.utils import timezone
 
 # Model for PackingList, representing a user's packing list for vacation
+
+
 class PackingList(models.Model):
     # ForeignKey to User, indicating the user who owns this packing list
     user = models.ForeignKey(
@@ -16,6 +18,8 @@ class PackingList(models.Model):
         return self.title
 
 # Model for Task, representing a task within a packing list
+
+
 class Task(models.Model):
     # CharField for the title of the task
     title = models.CharField(max_length=200)

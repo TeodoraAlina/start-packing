@@ -35,6 +35,9 @@
                 <!-- Render the TaskFormSet management form for formset handling -->
 
                 {% for form in task_formset %}
+                {% for hidden in form.hidden_fields %}
+                {{ hidden }}
+                {% endfor %}
                 <!-- Loop through each form in the TaskFormSet -->
 
                 <tr>

@@ -12,15 +12,18 @@ def get_homepage(request):
 
 @login_required
 def get_packing_list(request):
-    # View for rendering the packing list page and displaying packing lists and tasks.
+    # View for rendering the packing list page and displaying
+    #  packing lists and tasks.
 
     # Retrieve packing lists and tasks for the current user.
     packinglists = PackingList.objects.filter(user=request.user)
     tasks = Task.objects.filter(packing_list__user=request.user)
 
-    # Convert the created_date and created_task_date fields to a more readable format.
+    # Convert the created_date and created_task_date fields to
+    # a more readable format.
     for packinglist in packinglists:
-        packinglist.created_date = packinglist.created_date.strftime('%b %d, %Y')
+        packinglist.created_date = packinglist.created_date.strftime(
+            '%b %d, %Y')
 
     for task in tasks:
         task.created_task_date = task.created_task_date.strftime('%b %d, %Y')
@@ -94,6 +97,9 @@ def edit_packing_list(request, packing_list_id):
             packing_list_form.save()
             task_formset.save()
             return redirect('get_packing_list')
+        else:
+            for form in task_formset:
+                print(form.errors.as_data())
     else:
         packing_list_form = PackingListForm(instance=packing_list)
         task_formset = TaskFormSet(instance=packing_list)
@@ -107,17 +113,18 @@ def edit_packing_list(request, packing_list_id):
     return render(request, 'packinglist/edit_packinglist.html', context)
 
 
-@login_required
+@ login_required
 def toggle_task(request, task_id):
     # View for toggling the completion status of a task.
 
-    task = get_object_or_404(Task, id=task_id, packing_list__user=request.user)
+    task = get_object_or_404(
+        Task, id=task_id, packing_list__user=request.user)
     task.completed = not task.completed
     task.save()
     return redirect('get_packing_list')
 
 
-@login_required
+@ login_required
 def delete_item(request, item_type, item_id):
     # View for deleting a task or packing list item.
 
@@ -130,5 +137,4 @@ def delete_item(request, item_type, item_id):
     if model:
         item = get_object_or_404(model, id=item_id)
         item.delete()
-
     return redirect('get_packing_list')
