@@ -1,29 +1,79 @@
 {% extends 'base.html' %}
+<!-- Extends the 'base.html' template to inherit its structure -->
 
 {% block content %}
+<!-- Defines a new content block -->
+
 <html lang="en" style="height:fit-content">
+<!-- HTML document with language set to English and a custom style -->
+
 <main class="container py-4">
+    <!-- Main content container with a padding of 4 units in the y-axis -->
+
     <h1 class="display-4">Edit Packing List</h1>
+    <!-- Main heading with a Bootstrap 'display-4' class -->
+
     <form method="POST" class="mt-4">
+        <!-- Form to submit data with POST method and a top margin of 4 units -->
+
         {% csrf_token %}
+        <!-- CSRF token for form security -->
+
         {{ packing_list_form.as_p }}
+        <!-- Render the PackingListForm fields as paragraphs -->
+
         <h2 class="mt-4">Tasks:</h2>
+        <!-- Sub-heading for tasks section with a top margin of 4 units -->
+
         <div class="table-responsive">
+            <!-- Container for a responsive table -->
+
             <table class="table table-bordered table-striped mt-3">
+                <!-- Table with Bootstrap table classes and a top margin of 3 units -->
+
                 {{ task_formset.management_form }}
+                <!-- Render the TaskFormSet management form for formset handling -->
+
                 {% for form in task_formset %}
+                <!-- Loop through each form in the TaskFormSet -->
+
                 <tr>
+                    <!-- Table row for each form fields -->
                     <td>{{ form.title.label_tag }}</td>
+                    <!-- Table cell for the form title label with its label tag -->
+
                     <td>{{ form.title }}</td>
+                    <!-- Table cell for the form title field -->
+
                     <td>{{ form.completed.label_tag }}</td>
+                    <!-- Table cell for the form completed label with its label tag -->
+
                     <td>{{ form.completed }}</td>
+                    <!-- Table cell for the form completed field -->
+
                 </tr>
+                <!-- End of table row -->
+
                 {% endfor %}
+                <!-- End of loop for form fields -->
+
             </table>
+            <!-- End of table -->
+
         </div>
+        <!-- End of table container -->
+
         <button type="submit" class="btn btn-primary mt-3">Save Changes</button>
+        <!-- Submit button to save changes, styled with Bootstrap primary button class and a top margin of 3 units -->
+
     </form>
+    <!-- End of form -->
+
 </main>
+<!-- End of main content container -->
+
 </html>
+<!-- End of HTML document -->
 
 {% endblock %}
+<!-- End of content block -->
