@@ -1,5 +1,7 @@
 /* Styles for index.html */
 
+/* Global Styles */
+/* Set height to 100% for both HTML and body elements */
 html,
 body {
     height: 100%;
@@ -7,6 +9,8 @@ body {
     padding: 0;
 }
 
+/* Background Image Styles */
+/* Set background image for the body, covering the entire viewport */
 body {
     background-image: url("https://res.cloudinary.com/dxajyjfpw/image/upload/v1690213072/beach.jpg");
     background-size: cover;
@@ -14,6 +18,8 @@ body {
     background-repeat: no-repeat;
 }
 
+/* Heading Styles */
+/* Styles for main heading */
 h1 {
     font-family: 'Poppins', sans-serif;
     color: #cd8253;
@@ -21,6 +27,8 @@ h1 {
     text-transform: uppercase;
 }
 
+/* Lead Text Styles */
+/* Styles for lead text */
 .lead {
     font-family: 'Poppins', sans-serif;
     color: #20a8b7;
@@ -29,6 +37,8 @@ h1 {
     text-transform: uppercase;
 }
 
+/* Paragraph Styles */
+/* Styles for regular paragraphs */
 p {
     font-family: 'Roboto', sans-serif;
     color: #4c4c4c;
@@ -38,6 +48,8 @@ p {
     text-transform: uppercase;
 }
 
+/* Button Styles */
+/* Styles for primary button */
 .btn {
     background-color: #7ebdaf;
     color: white;
@@ -52,10 +64,13 @@ p {
     font-weight: bold;
 }
 
+/* Button Hover Effect */
 .btn:hover {
     background-color: #4dbba5;
 }
 
+/* Container Styles */
+/* Styles for the main container */
 .container-fluid {
     margin-top: 30px;
     position: absolute;
@@ -72,6 +87,7 @@ p {
 
 /* Styles for navigation bar */
 
+/* Navigation Bar Background */
 .navbar {
     background-color: #FFF;
     transition: background-color 0.3s ease;
@@ -79,6 +95,7 @@ p {
     z-index: 1;
 }
 
+/* Navigation Bar Brand (Logo) */
 .navbar-brand {
     font-family: 'Poppins', sans-serif;
     color: #4c4c4c;
@@ -86,6 +103,7 @@ p {
     font-size: 1.2rem;
 }
 
+/* Navigation Links */
 .navbar-nav .nav-link {
     font-family: 'Roboto', sans-serif;
     color: #4c4c4c;
@@ -93,6 +111,7 @@ p {
     padding: 0.5rem 1rem;
 }
 
+/* Navigation Links Hover Effect */
 .navbar-nav .nav-link:hover {
     color: #cd8253;
     border-radius: 5px;
@@ -100,10 +119,12 @@ p {
 
 /* Styles for packinglist.html */
 
+/* Hidden Element Style */
 .hidden {
     display: none;
 }
 
+/* Main Container Style */
 main.container {
     margin-top: 30px;
     padding: 20px;
@@ -115,7 +136,7 @@ main.container {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
 
-
+/* Packing List Heading Style */
 main.container h1 {
     font-size: 2rem;
     font-family: 'Poppins', sans-serif;
@@ -126,6 +147,7 @@ main.container h1 {
     margin-top: 2rem;
 }
 
+/* Tasks Heading Style */
 main.container h2 {
     font-size: 1.7rem;
     font-family: 'Roboto', sans-serif;
@@ -137,13 +159,18 @@ main.container h2 {
     margin-bottom: 2rem;
 }
 
+/* Paragraph Styles within Container */
 main.container p {
     margin-bottom: 2rem;
     padding: 10px;
 }
 
+/* List Container Style */
 .list-container {
-    background-color: rgba(255, 255, 255, 0);
+    background-color: rgba(255,
+            255,
+            255,
+            0);
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 20px;
@@ -153,10 +180,12 @@ main.container p {
     align-items: center;
 }
 
+/* Table Styles */
 table {
     letter-spacing: 0.1rem;
 }
 
+/* List Title Style */
 .list-title h3 a.list-toggle {
     margin-right: 10px;
     color: #cd8253;
@@ -168,10 +197,12 @@ table {
     white-space: nowrap;
 }
 
+/* List Title Hover Effect */
 .list-title h3 a.list-toggle:hover {
     color: #bb581a;
 }
 
+/* List Title Container Style */
 .list-title {
     display: flex;
     justify-content: center;
@@ -179,6 +210,7 @@ table {
     margin-bottom: 10px;
 }
 
+/* List Title Heading Style */
 .list-title h3 {
     margin-top: 20px;
     display: flex;
@@ -186,11 +218,13 @@ table {
     justify-content: center;
 }
 
+/* List Buttons Styles */
 .list-buttons .btn {
     margin-left: 5px;
     margin-bottom: 2px;
 }
 
+/* List Buttons Container Style */
 .list-buttons {
     display: flex;
     justify-content: center;
@@ -199,17 +233,19 @@ table {
     margin-top: 10px;
 }
 
+/* Styles for Buttons in the List */
 .btn.btn-primary.mb-3 {
     font-size: 1rem;
     background-color: #7ebdaf;
     margin-bottom: 2rem;
 }
 
+/* Button Hover Effect */
 .btn.btn-primary.mb-3:hover {
     background-color: #4dbba5;
 }
 
-
+/* Secondary Button Styles */
 .btn.btn-secondary.btn-sm {
     font-size: 0.7rem;
     padding: 10px;
@@ -217,44 +253,53 @@ table {
     background-color: #3f9481;
 }
 
+/* Secondary Button Hover Effect */
 .btn.btn-secondary.btn-sm:hover {
     background-color: #1a7864;
 }
 
+/* Success Button Styles */
 .btn.btn-success.btn-sm {
     font-size: 0.7rem;
     padding: 10px;
     background-color: #3f9481;
 }
 
+/* Success Button Hover Effect */
 .btn.btn-success.btn-sm:hover {
     background-color: #1a7864;
 }
 
+/* Danger Button Styles */
 .btn.btn-danger.btn-sm {
     font-size: 0.7rem;
     padding: 10px;
     background-color: #d64a58;
 }
 
+/* Danger Button Hover Effect */
 .btn.btn-danger.btn-sm:hover {
     background-color: #d32335;
 }
 
+/* Info Button Styles */
 .btn.btn-info.btn-sm {
     font-size: 0.7rem;
     padding: 10px;
     background-color: #3f9481;
 }
 
+/* Info Button Hover Effect */
 .btn.btn-info.btn-sm:hover {
     background-color: #1a7864;
 }
 
+/* Task List Styles */
 .task-list {
     margin-bottom: 20px;
 }
 
+/* Task Item Styles */
 .task-item {
     color: #20a8b7;
     padding: 10px;
@@ -265,6 +310,7 @@ table {
     letter-spacing: 0.1rem;
 }
 
+/* Task Title Styles */
 .task-title {
     color: #20a8b7;
     font-size: 1rem;
@@ -273,13 +319,15 @@ table {
     padding: 20px;
 }
 
-.task-item span.task-date  {
+/* Task Date Styles */
+.task-item span.task-date {
     font-size: 0.5rem;
     color: #4c4c4c;
     font-weight: bold;
     font-family: sans-serif;
 }
 
+/* List Date Styles */
 .list-date {
     font-size: 0.5rem;
     padding-right: 20px;
@@ -288,6 +336,7 @@ table {
 
 /* Styles for forms */
 
+/* Form Container Styles */
 main.container.form {
     position: absolute;
     top: 50%;
@@ -296,6 +345,7 @@ main.container.form {
     text-align: center;
 }
 
+/* Label and Input Styles */
 label,
 input {
     font-family: 'Roboto', sans-serif;
@@ -303,6 +353,7 @@ input {
     color: #4c4c4c;
 }
 
+/* Label Padding */
 label {
     padding: 10px;
 }
