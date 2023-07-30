@@ -1,6 +1,6 @@
 # Smells Like Vacay - Your Ultimate Vacation Packing List
 
-<img width="400" alt="Home Page" src="images-for-readme/homepage-image.png">
+<img width="600" alt="Home Page" src="images-for-readme/homepage-image.png">
 ## Project Overview
 
 - “Smells Like Vacay” is an innovative and user-friendly packing list application designed to simplify your vacation preparations. Powered by Django, this web-based application empowers users to effortlessly create and manage their packing lists, ensuring a stress-free and well-organized travel experience.
@@ -34,14 +34,35 @@
     - [Error 404/403/500/405](#error-404403500405)
     - [Features for Future Development](#features-for-future-development)
   - [Testing](#testing)
-   - [Validation Testing](#validation-testing)
-   - [HTML](#html)
-   - [CSS](#css)
-   - [JavaScript](#javascript)
-   - [Python](#python)
-   - [Automated Testing](#automated-testing)
-   - [Manual Testing](#manual-testing)
-   - [Deployment](#deployment)
+  - [Validation Testing](#validation-testing)
+    - [HTML](#html)
+    - [CSS](#css)
+    - [JavaScript](#javascript)
+    - [Python](#python)
+    - [Automated Testing](#automated-testing)
+  - [Lighthouse](#lighthouse)
+      - [Desktop Results](#desktop-results)
+      - [Mobile Results](#mobile-results)
+  - [Manual Testing](#manual-testing)
+    - [User Stories and Test Results](#user-stories-and-test-results)
+    - [Known bugs](#known-bugs)
+  - [Deployment](#deployment)
+    - [How to Clone the Repository](#how-to-clone-the-repository)
+    - [Create a new PostgreSQL database instance on ElephantSQL](#create-a-new-postgresql-database-instance-on-elephantsql)
+    - [Create Application on Heroku](#create-application-on-heroku)
+    - [Configure Cloudinary to host static files used by the application](#configure-cloudinary-to-host-static-files-used-by-the-application)
+    - [Connect the Heroku app to the GitHub repository](#connect-the-heroku-app-to-the-github-repository)
+    - [Executing automated tests](#executing-automated-tests)
+    - [Final Deployment steps](#final-deployment-steps)
+  - [Technologies](#technologies)
+    - [Languages](#languages)
+    - [Database](#database)
+    - [Frameworks](#frameworks)
+    - [Libraries \& Packages](#libraries--packages)
+    - [Programs](#programs)
+  - [Credits](#credits)
+    - [Media](#media)
+  - [Acknowledgements](#acknowledgements)
 
 ## UX
 
@@ -247,7 +268,6 @@ By incorporating these features, I aim to enhance the overall usability and conv
 - The Django's test reporting tool '[Coverage](https://coverage.readthedocs.io/en/7.2.7/)' was installed to show the percentage of Python code that's been covered by tests:
   ![Coverage report](images-for-readme/coverage-report.png)
 
-
 ## Lighthouse
 
 #### Desktop Results
@@ -266,35 +286,35 @@ By incorporating these features, I aim to enhance the overall usability and conv
 
 ### User Stories and Test Results
 
-| User Story                                                                                                      | Test                                                      | Result |
-|---------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------|--------|
-| 1. As a user, I can mark a task as completed so that I can keep track of my progress while packing for my vacation.   | Create a task and mark it as completed.                   | Pass   |
-| 2. As a user, I can edit a task in my packing list to update the details or make corrections.                  | Create a task, edit its details, and save the changes.    | Pass   |
-| 3. As a user, I can delete a task from my packing list if I decide not to include it in my vacation planning.   | Create a task, then delete it from the list.              | Pass   |
-| 4. As a user, I can create multiple packing lists for different types of vacations or destinations to stay organized. | Create multiple packing lists with different titles.     | Pass   |
-| 5. As a user, I can add a new task to my packing list so that I remember to pack all the essential items for my trip. | Add a new task to the packing list.                      | Pass   |
-| 6. As a user, I can toggle the completion status of a task to easily visualize which items I’ve already packed. | Create a task and toggle its completion status.           | Pass   |
-| 7. As a user, I can view the created date of each packing list to keep track of when I planned for my vacations. | Create a packing list and check its created date.         | Pass   |
-| 8. As a user, I can view the created date of each task to see when I added it to my packing list.             | Create a task and check its created date.                 | Pass   |
-| 9. As a user, I can edit the title of my packing list to give it a specific name related to my vacation plans. | Create a packing list, edit its title, and save changes.  | Pass   |
+| User Story                                                                                                                          | Test                                                         | Result |
+| ----------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------ | ------ |
+| 1. As a user, I can mark a task as completed so that I can keep track of my progress while packing for my vacation.                 | Create a task and mark it as completed.                      | Pass   |
+| 2. As a user, I can edit a task in my packing list to update the details or make corrections.                                       | Create a task, edit its details, and save the changes.       | Pass   |
+| 3. As a user, I can delete a task from my packing list if I decide not to include it in my vacation planning.                       | Create a task, then delete it from the list.                 | Pass   |
+| 4. As a user, I can create multiple packing lists for different types of vacations or destinations to stay organized.               | Create multiple packing lists with different titles.         | Pass   |
+| 5. As a user, I can add a new task to my packing list so that I remember to pack all the essential items for my trip.               | Add a new task to the packing list.                          | Pass   |
+| 6. As a user, I can toggle the completion status of a task to easily visualize which items I’ve already packed.                     | Create a task and toggle its completion status.              | Pass   |
+| 7. As a user, I can view the created date of each packing list to keep track of when I planned for my vacations.                    | Create a packing list and check its created date.            | Pass   |
+| 8. As a user, I can view the created date of each task to see when I added it to my packing list.                                   | Create a task and check its created date.                    | Pass   |
+| 9. As a user, I can edit the title of my packing list to give it a specific name related to my vacation plans.                      | Create a packing list, edit its title, and save changes.     | Pass   |
 | 10. As a user, I can view all my packing lists and tasks on a single page for a comprehensive overview of my vacation preparations. | Access the packing list page and verify all lists and tasks. | Pass   |
-| 11. As a user, I can log in to my account to access my private packing lists and tasks securely.             | Log in with valid credentials and access private lists.   | Pass   |
-| 12. As a user, I can sign up for a new account to start using the “Smells Like Vacay” packing list application. | Sign up with a new account and access the app's features. | Pass   |
-| 13. As a user, I can log out of my account to ensure my packing lists are private and secure.               | Log out from the account and verify successful logout.    | Pass   |
-| 14. As an admin, I can access a dashboard to manage all users’ packing lists and tasks for administrative purposes. | Access the admin dashboard and verify access to all data. | Pass   |
-| 15. As an admin, I can view and edit any packing list or task in the system for administrative oversight. | Access the admin dashboard, view and edit data for users. | Pass   |
-| 16. As an admin, I can delete any packing list or task if necessary, ensuring data accuracy and relevance. | Access the admin dashboard, delete data for users.        | Pass   |
+| 11. As a user, I can log in to my account to access my private packing lists and tasks securely.                                    | Log in with valid credentials and access private lists.      | Pass   |
+| 12. As a user, I can sign up for a new account to start using the “Smells Like Vacay” packing list application.                     | Sign up with a new account and access the app's features.    | Pass   |
+| 13. As a user, I can log out of my account to ensure my packing lists are private and secure.                                       | Log out from the account and verify successful logout.       | Pass   |
+| 14. As an admin, I can access a dashboard to manage all users’ packing lists and tasks for administrative purposes.                 | Access the admin dashboard and verify access to all data.    | Pass   |
+| 15. As an admin, I can view and edit any packing list or task in the system for administrative oversight.                           | Access the admin dashboard, view and edit data for users.    | Pass   |
+| 16. As an admin, I can delete any packing list or task if necessary, ensuring data accuracy and relevance.                          | Access the admin dashboard, delete data for users.           | Pass   |
 
 ### Known bugs
-- Currently no known bugs.
 
+- Currently no known bugs.
 
 ## Deployment
 
-Detailed below are instructions on how to clone this project repository and the steps to configure and deploy the application. Code Institute also provides a summary of similar process steps here :  [CI Cheat Sheet](https://codeinstitute.s3.amazonaws.com/fst/Django%20Blog%20Cheat%20Sheet%20v1.pdf)
+Detailed below are instructions on how to clone this project repository and the steps to configure and deploy the application. Code Institute also provides a summary of similar process steps here : [CI Cheat Sheet](https://codeinstitute.s3.amazonaws.com/fst/Django%20Blog%20Cheat%20Sheet%20v1.pdf)
 
 1.  How to Clone the Repository
-2. Create a new PostgreSQL database instance on ElephantSQL
+2.  Create a new PostgreSQL database instance on ElephantSQL
 3.  Create Application on Heroku
 4.  Configure Cloudinary to host images used by the application
 5.  Connect the Heroku app to the GitHub repository
@@ -303,102 +323,107 @@ Detailed below are instructions on how to clone this project repository and the 
 
 ### How to Clone the Repository
 
--   Go to the [https://github.com/TeodoraAlina/start-packing](https://github.com/TeodoraAlina/start-packing)  repository on GitHub
--   Click the "Code" button to the right of the screen, click HTTPs and copy the link there
--   Open a GitBash terminal and navigate to the directory where you want to locate the clone
--   On the command line, type "git clone" then paste in the copied url and press the Enter key to begin the clone process
--   To install the packages required by the application use the command : pip install -r requirements.txt
--   When developing and running the application locally set DEBUG=True in the settings.py file
--   Changes made to the local clone can be pushed back to the repository using the following commands :
-    -   git add  _filenames_  (or "." to add all changed files)
-    -   git commit -m  _"text message describing changes"_
-    -   git push
--   N.B. Any changes pushed to the master branch will take effect on the live project once the application is re-deployed from Heroku
-    
+- Go to the [https://github.com/TeodoraAlina/start-packing](https://github.com/TeodoraAlina/start-packing) repository on GitHub
+- Click the "Code" button to the right of the screen, click HTTPs and copy the link there
+- Open a GitBash terminal and navigate to the directory where you want to locate the clone
+- On the command line, type "git clone" then paste in the copied url and press the Enter key to begin the clone process
+- To install the packages required by the application use the command : pip install -r requirements.txt
+- When developing and running the application locally set DEBUG=True in the settings.py file
+- Changes made to the local clone can be pushed back to the repository using the following commands :
+  - git add _filenames_ (or "." to add all changed files)
+  - git commit -m _"text message describing changes"_
+  - git push
+- N.B. Any changes pushed to the master branch will take effect on the live project once the application is re-deployed from Heroku
+
 ### Create a new PostgreSQL database instance on ElephantSQL
 
 - Log in to [ElephantSQL.com](https://www.elephantsql.com/) to access your dashboard
 - Click “Create New Instance”
 - Set up your plan
-- Give your plan a  Name  (this is commonly the name of the project)
-    -   Select the  Tiny Turtle (Free)  plan
-    -   You can leave the  Tags  field blank
+- Give your plan a Name (this is commonly the name of the project)
+  - Select the Tiny Turtle (Free) plan
+  - You can leave the Tags field blank
 - Select “Select Region”
 - Select a data center near you
-	- If you receive a message saying "Error: No cluster available in your-chosen-data-center  yet", choose another region.  Note:  You're free to use any of the available free data centers, be it AWS, Azure or any of the other providers.
+  - If you receive a message saying "Error: No cluster available in your-chosen-data-center yet", choose another region. Note: You're free to use any of the available free data centers, be it AWS, Azure or any of the other providers.
 - Then click “Review”
 - Check your details are correct and then click “Create instance”
-- Return to the ElephantSQL dashboard and click on the  database instance name  for this project
+- Return to the ElephantSQL dashboard and click on the database instance name for this project
 - In the URL section, click the copy icon to copy the database URL
 
 ### Create Application on Heroku
 
--   Log in to Heroku at  [https://heroku.com](https://heroku.com/)  - create an account if needed.
--   From the Heroku dashboard, click the Create new app button. For a new account an icon will be visible on screen to allow you to Create an app, otherwise a link to this function is located under the New dropdown menu at the top right of the screen.
--   On the Create New App page, enter a unique name for the application and select region. Then click Create app.
--   Next, click on Settings on the Application Configuration page and click on the "Reveal Config Vars" button - add the url from ElephantSQL to DATABASE_URL 
--   Add a new Config Var called DISABLE_COLLECTSTATIC and assign it a value of 1.
--   Add a new Config Var called SECRET_KEY and assign it a value - any random string of letters, digits and symbols.
--   The settings.py file should be updated to use the DATABASE_URL and SECRET_KEY environment variable values as follows :
-    -   DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
-    -   SECRET_KEY = os.environ.get('SECRET_KEY')
--   In Gitpod, in the project terminal window, to initialize the data model in the postgres database, run the command : python3 manage.py migrate
--   Make sure the project requirements.txt file is up to date with all necessary supporting files by entering the command : pip3 freeze --local > requirements.txt
--   Commit and push any local changes to GitHub.
--   In order to be able to run the application on localhost, add SECRECT_KEY and DATABASE_URL and their values to env.py
+- Log in to Heroku at [https://heroku.com](https://heroku.com/) - create an account if needed.
+- From the Heroku dashboard, click the Create new app button. For a new account an icon will be visible on screen to allow you to Create an app, otherwise a link to this function is located under the New dropdown menu at the top right of the screen.
+- On the Create New App page, enter a unique name for the application and select region. Then click Create app.
+- Next, click on Settings on the Application Configuration page and click on the "Reveal Config Vars" button - add the url from ElephantSQL to DATABASE_URL
+- Add a new Config Var called DISABLE_COLLECTSTATIC and assign it a value of 1.
+- Add a new Config Var called SECRET_KEY and assign it a value - any random string of letters, digits and symbols.
+- The settings.py file should be updated to use the DATABASE_URL and SECRET_KEY environment variable values as follows :
+  - DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
+  - SECRET_KEY = os.environ.get('SECRET_KEY')
+- In Gitpod, in the project terminal window, to initialize the data model in the postgres database, run the command : python3 manage.py migrate
+- Make sure the project requirements.txt file is up to date with all necessary supporting files by entering the command : pip3 freeze --local > requirements.txt
+- Commit and push any local changes to GitHub.
+- In order to be able to run the application on localhost, add SECRECT_KEY and DATABASE_URL and their values to env.py
 
 ### Configure Cloudinary to host static files used by the application
 
--   Log in to Cloudinary - create an account if needed. To create the account provide your name, email and set up a password. For "primary interest" you can choose "Programmable Media for image and video API". Click "Create Account" and you will be sent an email to verify your account and bring you to the dashboard.
--   From the dashboard, copy the "API Environment variable" value by clicking on the "Copy to clipboard" link.
--   Log in to Heroku and go to the Application Configuration page for the application. Click on Settings and click on the "Reveal Config Vars" button.
--   Add a new Config Var called CLOUDINARY_URL and assign it the value copied from the Cloudinary dashboard, but remove the "CLOUDINARY_URL=" at the beginning of the string.
--   In order to be able to run the application on localhost, also add the CLOUDINARY_URL environment variable and value to env.py
+- Log in to Cloudinary - create an account if needed. To create the account provide your name, email and set up a password. For "primary interest" you can choose "Programmable Media for image and video API". Click "Create Account" and you will be sent an email to verify your account and bring you to the dashboard.
+- From the dashboard, copy the "API Environment variable" value by clicking on the "Copy to clipboard" link.
+- Log in to Heroku and go to the Application Configuration page for the application. Click on Settings and click on the "Reveal Config Vars" button.
+- Add a new Config Var called CLOUDINARY_URL and assign it the value copied from the Cloudinary dashboard, but remove the "CLOUDINARY_URL=" at the beginning of the string.
+- In order to be able to run the application on localhost, also add the CLOUDINARY_URL environment variable and value to env.py
 
 ### Connect the Heroku app to the GitHub repository
 
--   Go to the Application Configuration page for the application on Heroku and click on the Deploy tab.
--   Select GitHub as the Deployment Method and if prompted, confirm that you want to connect to GitHub. Enter the name of the github repository and click on Connect to link up the Heroku app to the GitHub repository code.
--   Scroll down the page and choose to either Automatically Deploy each time changes are pushed to GitHub, or Manually deploy - for this project Manual Deploy was selected.
--   The application can be run from the Application Configuration page by clicking on the Open App button.
+- Go to the Application Configuration page for the application on Heroku and click on the Deploy tab.
+- Select GitHub as the Deployment Method and if prompted, confirm that you want to connect to GitHub. Enter the name of the github repository and click on Connect to link up the Heroku app to the GitHub repository code.
+- Scroll down the page and choose to either Automatically Deploy each time changes are pushed to GitHub, or Manually deploy - for this project Manual Deploy was selected.
+- The application can be run from the Application Configuration page by clicking on the Open App button.
 
 ### Executing automated tests
 
--   The existing automated jquery/javascript test can be executed using jest as follows :
-    -   If jest is not installed then run the command : npm install --save-dev jest
-    -   Run the js test file using the command : npm test
--   The existing automated django/python tests are executed using unittest as follows :
-    -   Run the python tests using the command : python3 manage.py test
-    -   To run just a subset of the tests, then append the application and test file name to the command, e.g. : python3 manage.py test booking.test_models
--   Test coverage for the django/python tests can be reviewed using the coverage tool :
-    -   If coverage is not installed then run the command : pip3 install coverage
-    -   Execute the following series of commands to determine test coverage :
-        -   coverage run --source=booking manage.py test
-        -   coverage report
+- The existing automated jquery/javascript test can be executed using jest as follows :
+  - If jest is not installed then run the command : npm install --save-dev jest
+  - Run the js test file using the command : npm test
+- The existing automated django/python tests are executed using unittest as follows :
+  - Run the python tests using the command : python3 manage.py test
+  - To run just a subset of the tests, then append the application and test file name to the command, e.g. : python3 manage.py test booking.test_models
+- Test coverage for the django/python tests can be reviewed using the coverage tool :
+  - If coverage is not installed then run the command : pip3 install coverage
+  - Execute the following series of commands to determine test coverage :
+    - coverage run --source=booking manage.py test
+    - coverage report
 
 ### Final Deployment steps
 
 Once code changes have been completed and tested on localhost, the application can be prepared for Heroku deployment as follows :
 
--   Set DEBUG flag to False in settings.py
--   Ensure this line exists in settings.py to make summernote work on the deployed environment (CORS security feature): X_FRAME_OPTIONS = 'SAMEORIGIN'
--   Ensure requirements.txt is up to date using the command : pip3 freeze --local > requirements.txt
--   Push files to GitHub
--   In the Heroku Config Vars for the application delete this environment variable : DISABLE_COLLECTSTATIC
--   On the Heroku dashboard go to the Deploy tab for the application and click on deploy branch
+- Set DEBUG flag to False in settings.py
+- Ensure this line exists in settings.py to make summernote work on the deployed environment (CORS security feature): X_FRAME_OPTIONS = 'SAMEORIGIN'
+- Ensure requirements.txt is up to date using the command : pip3 freeze --local > requirements.txt
+- Push files to GitHub
+- In the Heroku Config Vars for the application delete this environment variable : DISABLE_COLLECTSTATIC
+- On the Heroku dashboard go to the Deploy tab for the application and click on deploy branch
 
 ## Technologies
+
 ### Languages
+
 - HTML, CSS, JavaScript, Python
 
 ### Database
+
 - sqlite3, ElephantSQL
 
 ### Frameworks
+
 - Django
 - Bootstrap
 
 ### Libraries & Packages
+
 - Font Awesome
 - Django allauth
 - Django Crispy Forms
@@ -408,6 +433,7 @@ Once code changes have been completed and tested on localhost, the application c
 - Google Fonts
 
 ### Programs
+
 - Codeanywhere
 - GitHub
 - Favicon.io
@@ -416,17 +442,20 @@ Once code changes have been completed and tested on localhost, the application c
 - Heroku
 
 ## Credits
+
 - The Code Institute 'I Think, Therefore I Blog' walkthrough project assisted and guided in the setup and basic structure of this project.
 - Code Institute Student Template: [codeanywhere full template](https://github.com/Code-Institute-Org/ci-full-template).
 - Documentation on [Django Formset](https://docs.djangoproject.com/en/4.2/topics/forms/formsets/)
 
 ### Media
+
 - The color pallete was taken from [Coolors]([https://coolors.co/palettes/popular/cd8253).
 - The background-images images were chosen from [Pexels](https://www.pexels.com)
 - The icons for the favicon and navigation bar were taken from [Font Awesome](https://fontawesome.com/).
 - The favicon image was converted using [Favicon.io](https://favicon.io/).
 
 ## Acknowledgements
+
 - My mentor, for continuous helpful feedback and support throughout the project.
 - The tutors at Code Institute, for their patience and support.
 - The Code Institute Slack community, for tips and guidance.
