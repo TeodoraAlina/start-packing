@@ -413,3 +413,21 @@ Once code changes have been completed and tested on localhost, the application c
 - Balsamiq
 - Cloudinary
 - Heroku
+
+## Credits
+- The Code Institute 'I Think, Therefore I Blog' walkthrough project assisted and guided in the setup and basic structure of this project.
+- Code Institute Student Template: [codeanywhere full template](https://github.com/Code-Institute-Org/ci-full-template).
+- Documentation on [Django Formset](https://docs.djangoproject.com/en/4.2/topics/forms/formsets/)
+
+### Media
+- The color pallete was taken from [Coolors]([https://coolors.co/palettes/popular/cd8253).
+- The background-images images were chosen from [Pexels](https://www.pexels.com)
+- The icons for the favicon and navigation bar were taken from [Font Awesome](https://fontawesome.com/).
+- The favicon image was converted using [Favicon.io](https://favicon.io/).
+
+## Acknowledgements
+- My mentor, for continuous helpful feedback and support throughout the project.
+- The tutors at Code Institute, for their patience and support.
+- The Code Institute Slack community, for tips and guidance.
+
+[Back to the beginning](#table-of-contents)
