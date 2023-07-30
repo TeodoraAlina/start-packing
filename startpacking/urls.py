@@ -16,3 +16,8 @@ urlpatterns = [
     path('delete_item/<str:item_type>/<int:item_id>/',
          views.delete_item, name='delete_item')
 ]
+
+handler404 = views.custom_404
+handler500 = views.custom_500
+handler403 = views.custom_403
+handler405 = views.custom_405
