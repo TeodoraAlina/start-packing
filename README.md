@@ -106,12 +106,12 @@ To ensure that users can access and use the app seamlessly across various device
 ### Home Page
 
 <img width="636" alt="Home Page Desktop" src="images-for-readme/homepage-desktop.png">
-<img width="611" alt="Home Page Desktop" src="images-for-readme/homepage-mobile.png">
+<img width="300" alt="Home Page Desktop" src="images-for-readme/homepage-mobile.png">
 
 ### Packing List App
 
 <img width="636" alt="Home Page Desktop" src="images-for-readme/packing-list-app-desktop.png">
-<img width="611" alt="Home Page Desktop" src="images-for-readme/packing-list-app-mobile.png">
+<img width="300" alt="Home Page Desktop" src="images-for-readme/packing-list-app-mobile.png">
 
 ## Features/Structure
 
