@@ -33,12 +33,14 @@
     - [Error 404/403/500/405](#error-404403500405)
     - [Features for Future Development](#features-for-future-development)
   - [Testing](#testing)
-  - [Validation Testing](#validation-testing)
-    - [HTML](#html)
-    - [CSS](#css)
-    - [JavaScript](#javascript)
-    - [Python](#python)
-    - [Automated Testing](#automated-testing)
+   - [Validation Testing](#validation-testing)
+   - [HTML](#html)
+   - [CSS](#css)
+   - [JavaScript](#javascript)
+   - [Python](#python)
+   - [Automated Testing](#automated-testing)
+   - [Manual Testing](#manual-testing)
+   - [Deployment](#deployment)
 
 ## UX
 
@@ -261,7 +263,7 @@ By incorporating these features, I aim to enhance the overall usability and conv
 
 ## Manual Testing
 
-## User Stories and Test Results
+### User Stories and Test Results
 
 | User Story                                                                                                      | Test                                                      | Result |
 |---------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------|--------|
@@ -383,3 +385,31 @@ Once code changes have been completed and tested on localhost, the application c
 -   Push files to GitHub
 -   In the Heroku Config Vars for the application delete this environment variable : DISABLE_COLLECTSTATIC
 -   On the Heroku dashboard go to the Deploy tab for the application and click on deploy branch
+
+## Technologies
+### Languages
+- HTML, CSS, JavaScript, Python
+
+### Database
+- sqlite3, ElephantSQL
+
+### Frameworks
+- Django
+- Bootstrap
+
+### Libraries & Packages
+- Font Awesome
+- Django allauth
+- Django Crispy Forms
+- gunicorn
+- psycopg2
+- SweetAlert2
+- Google Fonts
+
+### Programs
+- Codeanywhere
+- GitHub
+- Favicon.io
+- Balsamiq
+- Cloudinary
+- Heroku
