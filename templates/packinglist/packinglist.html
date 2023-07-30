@@ -49,8 +49,8 @@
                         </h3>
                         <div class="list-buttons">
                             <!-- Div for the buttons related to the packing list -->
-                            <a href="{% url 'edit_packing_list' packinglist.id %}"
-                                class="btn btn-secondary btn-sm">Edit List</a>
+                            <a href="{% url 'edit_packing_list' packinglist.id %}" class="btn btn-secondary btn-sm">Edit
+                                List</a>
                             <!-- Button to edit the packing list, styled with Bootstrap classes -->
                             <a href="{% url 'add_task' %}?packing_list_id={{ packinglist.id }}"
                                 class="btn btn-success btn-sm">Add Task</a>
@@ -91,8 +91,7 @@
                                 <!-- Div for the buttons related to each task -->
                                 <a href="{% url 'toggle_task' task_id=task.id %}" class="btn btn-info btn-sm">Toggle</a>
                                 <!-- Button to toggle the task completion status, styled with Bootstrap classes -->
-                                <a href="#"
-                                    onclick="confirmDelete('{{ task.title }}', '{{ task.id }}', 'task')"
+                                <a href="#" onclick="confirmDelete('{{ task.title }}', '{{ task.id }}', 'task')"
                                     class="btn btn-danger btn-sm">Delete Task</a>
                                 <!-- Button to delete the task, styled with Bootstrap classes and JavaScript onclick event -->
                             </div>
