@@ -1,6 +1,6 @@
 # Smells Like Vacay - Your Ultimate Vacation Packing List
 
-<img width="350" alt="Home Page" src="images-for-readme/homepage-image.png"><img width="350" alt="Packing List App" src="images-for-readme/packingist-app-image.png">  
+<img width="350" alt="Home Page" src="images-for-readme/homepage-image.png"><img width="350" alt="Packing List App" src="images-for-readme/packinglist-app-image.png">
 
 ## Project Overview
 
@@ -42,8 +42,8 @@
     - [Python](#python)
     - [Automated Testing](#automated-testing)
   - [Lighthouse](#lighthouse)
-      - [Desktop Results](#desktop-results)
-      - [Mobile Results](#mobile-results)
+    - [Desktop Results](#desktop-results)
+    - [Mobile Results](#mobile-results)
   - [Manual Testing](#manual-testing)
     - [User Stories and Test Results](#user-stories-and-test-results)
     - [Known bugs](#known-bugs)
