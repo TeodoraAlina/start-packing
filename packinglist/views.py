@@ -21,11 +21,9 @@ def get_packing_list(request):
     # Convert the created_date and created_task_date fields to a more readable format.
     for packinglist in packinglists:
         packinglist.created_date = packinglist.created_date.strftime('%b %d, %Y')
-        packinglist.save()
 
     for task in tasks:
         task.created_task_date = task.created_task_date.strftime('%b %d, %Y')
-        task.save()
 
     # Prepare the context to be passed to the template.
     context = {

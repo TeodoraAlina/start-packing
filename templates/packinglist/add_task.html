@@ -1,16 +1,38 @@
 {% extends 'base.html' %}
+<!-- Extends the 'base.html' template to inherit its structure -->
 
 {% block content %}
+<!-- Defines a new content block -->
 
 <main class="container form">
+<!-- Main content container with the 'form' class -->
+
     <h1 class="display-4">Add a Task for Your Vacation:</h1>
+    <!-- Main heading with a Bootstrap 'display-4' class -->
+
     <form method="POST" action="{% url 'add_task' %}" class="mt-4">
+    <!-- Form to submit data with POST method and a top margin of 4 units. The action attribute points to the 'add_task' URL -->
+
         {% csrf_token %}
+        <!-- CSRF token for form security -->
+
         {{ form_task }}
+        <!-- Render the TaskForm fields -->
+
         <div class="mt-3">
+        <!-- Container with a top margin of 3 units -->
+
             <button type="submit" class="btn btn-primary">Add Task</button>
+            <!-- Submit button to add a new task, styled with Bootstrap primary button class -->
+
         </div>
+        <!-- End of container -->
+
     </form>
+    <!-- End of form -->
+
 </main>
+<!-- End of main content container -->
 
 {% endblock %}
+<!-- End of content block -->
