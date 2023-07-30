@@ -1,5 +1,6 @@
 # Smells Like Vacay - Your Ultimate Vacation Packing List
 
+<img width="400" alt="Home Page" src="images-for-readme/homepage-image.png">
 ## Project Overview
 
 - “Smells Like Vacay” is an innovative and user-friendly packing list application designed to simplify your vacation preparations. Powered by Django, this web-based application empowers users to effortlessly create and manage their packing lists, ensuring a stress-free and well-organized travel experience.
