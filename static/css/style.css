@@ -265,8 +265,25 @@ table {
     letter-spacing: 0.1rem;
 }
 
-.task-item span {
-    flex: 1;
+.task-title {
+    color: #20a8b7;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.1rem;
+    padding: 20px;
+}
+
+.task-item span.task-date  {
+    font-size: 0.5rem;
+    color: #4c4c4c;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+.list-date {
+    font-size: 0.5rem;
+    padding-right: 20px;
+    font-weight: bold;
 }
 
 /* Styles for forms */

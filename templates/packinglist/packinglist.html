@@ -14,6 +14,7 @@
         <div class="list-container">
             <table>
                 <tr>
+                    <td class="list-date">{{ packinglist.created_date }}</td>
                     <td class="list-title" colspan="4">
                         <h3>
                             <a href="#" class="list-toggle" onclick="toggleList(this)">
@@ -34,11 +35,14 @@
                 <tr class="task-list hidden">
                     <td colspan="4">
                         {% for task in packinglist.tasks.all %}
-                        <div class="task-item"> {% if task.completed %}
+                        <div class="task-item">
+                            <span class="task-date">{{ task.created_task_date }}</span> 
+                            <span class="task-title">{% if task.completed %}
                             <strike>{{ task.title }}</strike>
                             {% else %}
                             {{ task.title }}
                             {% endif %}
+                            </span>
                             <div class="task-buttons">
                                 <a href="{% url 'toggle_task' task_id=task.id %}" class="btn btn-info btn-sm">Toggle</a>
                                 <a href="#" onclick="confirmDelete('{{ task.title }}', '{{ task.id }}', 'task')"
