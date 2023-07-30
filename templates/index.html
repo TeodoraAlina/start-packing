@@ -1,12 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<!-- Main Content Section -->
 <main class="container-fluid text-center">
     <div class="text-container">
+        <!-- Heading -->
         <h1 class="display-3 mb-4">Start Packing...</h1>
+        <!-- Lead Text -->
         <p class="lead">We are going on a ✨VACATION✨</p>
+        <!-- Subheading -->
         <p class="mb-4">Welcome to the Packing List App that saves you time and helps you stay a little bit more
             organized!🌴✈️</p>
+        <!-- Button to Redirect to Packing Lists -->
         <a href="{% url 'get_packing_list' %}" class="btn btn-primary btn-lg">Start your packing lists</a>
     </div>
 </main>
