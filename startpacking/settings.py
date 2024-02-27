@@ -30,9 +30,9 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['8000-teodoraalina-start-packi-ih5tuwba3x.us2.codeanyapp.com',
+ALLOWED_HOSTS = ['8000-teodoraalin-startpackin-2joyvsi63hh.ws-eu108.gitpod.io',
                  'start-packing-6d194f35b54b.herokuapp.com']
 
 
@@ -92,7 +92,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'startpacking.wsgi.application'
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://8000-teodoraalina-start-packi-ih5tuwba3x.us2.codeanyapp.com"]
+    "https://8000-teodoraalin-startpackin-2joyvsi63hh.ws-eu108.gitpod.io"]
 
 
 # Database
