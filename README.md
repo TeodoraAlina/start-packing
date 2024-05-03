@@ -1,6 +1,6 @@
 # Smells Like Vacay - Your Ultimate Vacation Packing List
 
-<img width="600" alt="Home Page" src="images-for-readme/homepage-image.png">
+<img width="600" alt="Home Page" src="images-for-readme/start-packing-responsive.jpeg">
 
 ## Project Overview
 
