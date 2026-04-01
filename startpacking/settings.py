@@ -16,7 +16,7 @@ import dj_database_url
 if os.path.isfile('env.py'):
     import env
 
-development = os.environ.get('DEVELOPMENT', False)
+development = os.environ.get('DEVELOPMENT') == 'True'
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -67,7 +67,6 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'allauth.account.middleware.AccountMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -94,7 +93,7 @@ WSGI_APPLICATION = 'startpacking.wsgi.application'
 
 CSRF_TRUSTED_ORIGINS = [
     "https://8000-teodoraalin-startpackin-2joyvsi63hh.ws-eu108.gitpod.io",
-    "https://start-packing-6d194f35b54b.herokuapp.com/"
+    "https://start-packing-6d194f35b54b.herokuapp.com"
 ]
 
 
